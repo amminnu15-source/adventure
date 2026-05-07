@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCAPEQUEST | Unlock the Mystery. Conquer the Challenge.</title>
+    <meta name="description" content="India's #1 premium immersive escape room experience. Book rooms, track stats, compete on leaderboards, and relive your victories.">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/servicedetails.css">
+</head>
+<body>
+
+    
+    <nav id="navbar" class="navbar"></nav>
+    
+    <div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+
+<section class="detail-hero">
+
+  
+  <div class="hero-img-layer" id="heroImgLayer">
+    <img src="https://images.unsplash.com/photo-1604076913837-52ab5629fde9?w=1800&auto=format&fit=crop&q=80"
+         alt="Crimson Manor">
+  </div>
+
+  <div class="hero-vignette"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-scan"></div>
+  <div class="hero-flicker"></div>
+
+  <div class="hero-side-label">Room 01 — The Crimson Manor</div>
+  <div class="hero-watermark">01</div>
+
+  
+  <div class="hero-content-wrap">
+    <div class="container">
+
+      <div class="hero-top-bar">
+        <nav class="breadcrumb">
+          <a href="#">Home</a>
+          <span>✦</span>
+          <a href="#">Services</a>
+          <span>✦</span>
+          <span>The Crimson Manor</span>
+        </nav>
+
+        <div class="hero-difficulty-badge">
+          <span class="diff-dot"></span>
+          Expert Difficulty
+        </div>
+      </div>
+
+      <div class="hero-tag-row">
+        <span class="tag">Horror</span>
+        <span class="tag-ghost">Room 01</span>
+        <span class="tag-ghost">Ages 16+</span>
+      </div>
+
+      <h1 class="hero-room-title">The Crimson Manor</h1>
+
+      <p class="hero-room-subtitle">
+        A Haunting Where the Walls Remember Everything
+      </p>
+
+      <p class="hero-synopsis">
+        Trapped inside a Victorian estate where shadows breathe and portraits track your every move.
+        Escape before midnight or become part of the manor forever.
+      </p>
+
+      
+      <div class="hero-stats-strip">
+        <div class="hstat"><div class="hstat-val">60</div><div class="hstat-lbl">Minutes</div></div>
+        <div class="hstat"><div class="hstat-val">2–6</div><div class="hstat-lbl">Players</div></div>
+        <div class="hstat"><div class="hstat-val">23%</div><div class="hstat-lbl">Escape Rate</div></div>
+        <div class="hstat"><div class="hstat-val">4.9★</div><div class="hstat-lbl">Rating</div></div>
+        <div class="hstat"><div class="hstat-val">₹799</div><div class="hstat-lbl">Per Person</div></div>
+      </div>
+
+      
+      <div class="hero-cta-row">
+        <a href="#book" class="btn-primary">Book This Room</a>
+      </div>
+
+    </div>
+  </div>
+
+  
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+
+</section>
+
+<div class="container">
+  <div class="detail-body">
+
+    <div class="detail-main">
+
+  
+
+ <div class="timeline-block reveal">
+
+  <div class="block-eyebrow">
+   
+    <span class="block-label">Your Mission</span>
+  </div>
+
+  <h2 class="story-heading">
+    How The <em>Night Unfolds</em>
+  </h2>
+
+  <div class="timeline">
+
+    <div class="tl-item reveal-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-step">Phase 01</div>
+        <div class="tl-title">The Entry Hall</div>
+        <div class="tl-desc">You wake in a cold foyer. Gas lamps flicker. A locked iron door and a shattered portrait of Lord Ashford are all that greet you. Find the first key hidden within the broken frame.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-step">Phase 02</div>
+        <div class="tl-title">The Library of Whispers</div>
+        <div class="tl-desc">Ancient tomes hold encrypted clues. Decode the cipher hidden across three journals to reveal the ritual chamber's location — but don't disturb the raven.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-step">Phase 03</div>
+        <div class="tl-title">The Séance Room</div>
+        <div class="tl-desc">A spirit board, nine candles, and a message scratched into the floor. Piece together Ashford's final words to unlock the hidden passage.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal-item">
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-step">Phase 04</div>
+        <div class="tl-title">The Ritual Chamber</div>
+        <div class="tl-desc">Six artefacts. One binding seal. Assemble the ritual in the correct order within the final fifteen minutes — or remain forever.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+
+const items = document.querySelectorAll(".reveal-item");
+
+function revealTimeline(){
+  items.forEach(el=>{
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 120){
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealTimeline);
+revealTimeline();
+</script>
+      
+     <div class="puzzles-block reveal" id="puzzles">
+
+  <div class="block-eyebrow">
+  
+    <span class="block-label">Challenge Types</span>
+  </div>
+
+  <h2 class="story-heading">
+    What <em>Awaits</em> You
+  </h2>
+
+  <div class="puzzle-grid">
+
+    <div class="puzzle-card reveal-card">
+      <span class="puzzle-emoji">🔐</span>
+      <div class="puzzle-name">Cipher & Cryptography</div>
+      <div class="puzzle-desc">Victorian-era coded messages, substitution ciphers, and ancient glyphs decoded under pressure.</div>
+    </div>
+
+    <div class="puzzle-card reveal-card">
+      <span class="puzzle-emoji">🔍</span>
+      <div class="puzzle-name">Hidden Object Search</div>
+      <div class="puzzle-desc">Every object hides clues — paintings, bricks, candles all conceal layers of mystery.</div>
+    </div>
+
+    <div class="puzzle-card reveal-card">
+      <span class="puzzle-emoji">⚙️</span>
+      <div class="puzzle-name">Mechanical Locks</div>
+      <div class="puzzle-desc">Clockwork mechanisms, combination locks, and pressure-based devices requiring precision.</div>
+    </div>
+
+    <div class="puzzle-card reveal-card">
+      <span class="puzzle-emoji">🧠</span>
+      <div class="puzzle-name">Logic Sequencing</div>
+      <div class="puzzle-desc">Multi-step puzzles where each solution unlocks the next chain in the sequence.</div>
+    </div>
+
+    <div class="puzzle-card reveal-card">
+      <span class="puzzle-emoji">👁️</span>
+      <div class="puzzle-name">Atmospheric Clues</div>
+      <div class="puzzle-desc">Light, sound, temperature, and environmental shifts guide your progress.</div>
+    </div>
+
+    <div class="puzzle-card reveal-card">
+      <span class="puzzle-emoji">🤝</span>
+      <div class="puzzle-name">Team Cooperation</div>
+      <div class="puzzle-desc">Split-room challenges where communication becomes the key to survival.</div>
+    </div>
+
+  </div>
+
+</div>
+<script>
+
+const cards = document.querySelectorAll(".reveal-card");
+
+function revealCards(){
+  cards.forEach(el=>{
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealCards);
+revealCards();
+</script>
+
+      
+     <div class="difficulty-block reveal" id="difficulty">
+
+  
+  <div class="block-eyebrow">
+    
+    <span class="block-label">Difficulty Breakdown</span>
+  </div>
+
+  <h2 class="story-heading">
+    Know What <em>You're Facing</em>
+  </h2>
+
+  <p class="difficulty-subtext">
+    The Crimson Manor is built for teams that enjoy intense puzzle-solving,
+    immersive horror atmosphere, and high-pressure decision making.
+  </p>
+
+  
+  <div class="diff-meters">
+
+    
+    <div class="diff-row">
+      <div class="diff-left">
+        <span class="diff-icon">🧩</span>
+        <span class="diff-label">Puzzle Complexity</span>
+      </div>
+
+      <div class="diff-bar-track">
+        <div class="diff-bar-fill" data-width="92%"></div>
+      </div>
+
+      <span class="diff-pct">92%</span>
+    </div>
+
+    
+    <div class="diff-row">
+      <div class="diff-left">
+        <span class="diff-icon">⏳</span>
+        <span class="diff-label">Time Pressure</span>
+      </div>
+
+      <div class="diff-bar-track">
+        <div class="diff-bar-fill" data-width="88%"></div>
+      </div>
+
+      <span class="diff-pct">88%</span>
+    </div>
+
+    
+    <div class="diff-row">
+      <div class="diff-left">
+        <span class="diff-icon">🤝</span>
+        <span class="diff-label">Teamwork Required</span>
+      </div>
+
+      <div class="diff-bar-track">
+        <div class="diff-bar-fill" data-width="75%"></div>
+      </div>
+
+      <span class="diff-pct">75%</span>
+    </div>
+
+    
+    <div class="diff-row">
+      <div class="diff-left">
+        <span class="diff-icon">👁️</span>
+        <span class="diff-label">Scare Factor</span>
+      </div>
+
+      <div class="diff-bar-track">
+        <div class="diff-bar-fill" data-width="95%"></div>
+      </div>
+
+      <span class="diff-pct">95%</span>
+    </div>
+
+    
+    <div class="diff-row">
+      <div class="diff-left">
+        <span class="diff-icon">🗺️</span>
+        <span class="diff-label">Exploration Area</span>
+      </div>
+
+      <div class="diff-bar-track">
+        <div class="diff-bar-fill" data-width="68%"></div>
+      </div>
+
+      <span class="diff-pct">68%</span>
+    </div>
+
+  </div>
+
+</div>
+<script>
+    /* ═══════════════════════════════════════
+   REVEAL ANIMATION
+═══════════════════════════════════════ */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+  revealElements.forEach(el => {
+
+    const top = el.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+/* ═══════════════════════════════════════
+   BAR ANIMATION
+═══════════════════════════════════════ */
+
+const bars = document.querySelectorAll(".diff-bar-fill");
+
+function animateBars(){
+
+  bars.forEach(bar => {
+
+    const rect = bar.getBoundingClientRect();
+
+    if(rect.top < window.innerHeight - 50){
+
+      const width = bar.dataset.width;
+      bar.style.width = width;
+
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", animateBars);
+animateBars();
+</script>
+
+      
+      <div class="gallery-block reveal" id="gallery">
+
+  
+  <div class="block-eyebrow">
+    <span class="block-label">Inside The Manor</span>
+  </div>
+
+  <h2 class="story-heading">
+    A Glimpse <em>Within</em>
+  </h2>
+
+
+
+  
+  <div class="gallery-grid">
+
+    
+    <div class="gal-item gal-a">
+      <img
+        class="gal-img"
+        src="../images/treasure.jpg"
+        alt="The Entry Hall"
+        loading="lazy"
+      />
+
+      <div class="gal-overlay"></div>
+
+      <div class="gal-content">
+        <span class="gal-tag">Phase 01</span>
+        <h3 class="gal-title">The Entry Hall</h3>
+      </div>
+    </div>
+
+    
+    <div class="gal-item gal-b">
+      <img
+        class="gal-img"
+        src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800&auto=format&fit=crop&q=80"
+        alt="Library of Whispers"
+        loading="lazy"
+      />
+
+      <div class="gal-overlay"></div>
+
+      <div class="gal-content">
+        <span class="gal-tag">Phase 02</span>
+        <h3 class="gal-title">Library Of Whispers</h3>
+      </div>
+    </div>
+
+    
+    <div class="gal-item gal-c">
+      <img
+        class="gal-img"
+        src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=800&auto=format&fit=crop&q=80"
+        alt="The Séance Room"
+        loading="lazy"
+      />
+
+      <div class="gal-overlay"></div>
+
+      <div class="gal-content">
+        <span class="gal-tag">Phase 03</span>
+        <h3 class="gal-title">Séance Room</h3>
+      </div>
+    </div>
+
+    
+    <div class="gal-item gal-d">
+      <img
+        class="gal-img"
+        src="https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?w=800&auto=format&fit=crop&q=80"
+        alt="Ritual Chamber"
+        loading="lazy"
+      />
+
+      <div class="gal-overlay"></div>
+
+      <div class="gal-content">
+        <span class="gal-tag">Finale</span>
+        <h3 class="gal-title">Ritual Chamber</h3>
+      </div>
+    </div>
+
+    
+    <div class="gal-item gal-e">
+      <img
+        class="gal-img"
+        src="../images/secertlab.avif"
+        alt="Hidden Artefacts"
+        loading="lazy"
+      />
+
+      <div class="gal-overlay"></div>
+
+      <div class="gal-content">
+        <span class="gal-tag">Secrets</span>
+        <h3 class="gal-title">Hidden Artefacts</h3>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<script>
+    /* ═══════════════════════════════════════
+   REVEAL ANIMATION
+═══════════════════════════════════════ */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+  revealElements.forEach(el => {
+
+    const top = el.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+/* ═══════════════════════════════════════
+   GALLERY PARALLAX EFFECT
+═══════════════════════════════════════ */
+
+const galleryItems = document.querySelectorAll(".gal-item");
+
+galleryItems.forEach(item => {
+
+  item.addEventListener("mousemove",(e)=>{
+
+    const img = item.querySelector(".gal-img");
+
+    const rect = item.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const moveX = (x / rect.width - 0.5) * 10;
+    const moveY = (y / rect.height - 0.5) * 10;
+
+    img.style.transform =
+      `scale(1.08) translate(${moveX}px, ${moveY}px)`;
+
+  });
+
+  item.addEventListener("mouseleave",()=>{
+
+    const img = item.querySelector(".gal-img");
+
+    img.style.transform = "scale(1)";
+
+  });
+
+});
+</script>
+
+      
+   <div class="reviews-block reveal">
+
+  <div class="reviews-bg-glow"></div>
+
+  <div class="block-eyebrow">
+    <span class="block-label">Guest Reviews</span>
+  </div>
+
+  <h2 class="story-heading">
+    Those Who <em>Dared</em> Enter
+  </h2>
+
+  <div class="reviews-list">
+
+    
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+
+        <div class="review-badge">Verified</div>
+      </div>
+
+      <p class="review-text">
+        "The Crimson Manor isn't just an escape room — it's a full theatrical experience. The set design is extraordinary, the puzzles are genuinely devious, and the atmosphere had our whole group screaming. We failed spectacularly and left grinning."
+      </p>
+
+      <div class="review-author">
+        <div class="author-avatar">
+          <img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80"
+            alt=""
+          />
+        </div>
+
+        <div class="author-info">
+          <div class="author-name">Arjun K.</div>
+          <div class="author-date">April 2025 · Group of 5</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+
+        <div class="review-badge">Top Rated</div>
+      </div>
+
+      <p class="review-text">
+        "We're seasoned escape room veterans and The Crimson Manor is the hardest we've ever faced. The cipher puzzle in the library nearly broke us. The attention to detail in the props is unlike anything we've seen. A masterpiece."
+      </p>
+
+      <div class="review-author">
+        <div class="author-avatar">
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80"
+            alt=""
+          />
+        </div>
+
+        <div class="author-info">
+          <div class="author-name">Sneha R.</div>
+          <div class="author-date">March 2025 · Group of 4</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star empty">★</span>
+        </div>
+
+        <div class="review-badge">Popular</div>
+      </div>
+
+      <p class="review-text">
+        "Incredibly immersive, genuinely scary, and brilliantly designed. The only reason for 4 stars: it ended too soon. We wanted more. Book it, struggle through it, and book it again."
+      </p>
+
+      <div class="review-author">
+        <div class="author-avatar">
+          <img
+            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80"
+            alt=""
+          />
+        </div>
+
+        <div class="author-info">
+          <div class="author-name">Vikram M.</div>
+          <div class="author-date">February 2025 · Group of 6</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<script>
+    /* =========================================
+   REVEAL ANIMATION
+========================================= */
+
+const reviewReveal = document.querySelectorAll(".reveal");
+
+const reviewObserver = new IntersectionObserver(
+  (entries)=>{
+    entries.forEach((entry)=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  {
+    threshold:0.15
+  }
+);
+
+reviewReveal.forEach((el)=>{
+  reviewObserver.observe(el);
+});
+
+/* =========================================
+   CARD PARALLAX HOVER
+========================================= */
+
+const reviewCards = document.querySelectorAll(".review-card");
+
+reviewCards.forEach((card)=>{
+
+  card.addEventListener("mousemove",(e)=>{
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x / rect.width) - 0.5) * 8;
+    const rotateX = ((y / rect.height) - 0.5) * -8;
+
+    card.style.transform = `
+      perspective(900px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      translateY(-10px)
+    `;
+  });
+
+  card.addEventListener("mouseleave",()=>{
+
+    card.style.transform = `
+      perspective(900px)
+      rotateX(0deg)
+      rotateY(0deg)
+      translateY(0px)
+    `;
+  });
+
+});
+</script>
+
+
+
+
+<div class="sidebar-info-card reveal right">
+
+  <div class="sidebar-info-bg"></div>
+
+  <div class="sidebar-info-top">
+
+    <span class="block-label">Before You Enter</span>
+  </div>
+
+  <h3 class="story-heading">
+    What To <em>Know</em>
+  </h3>
+
+  <div class="need-list">
+
+    <div class="need-item">
+      <span class="need-ico">✓</span>
+      <span>Arrive 10 minutes before your slot</span>
+    </div>
+
+    <div class="need-item">
+      <span class="need-ico">✓</span>
+      <span>Wear comfortable, closed shoes</span>
+    </div>
+
+    <div class="need-item">
+      <span class="need-ico">✓</span>
+      <span>No flash photography inside</span>
+    </div>
+
+    <div class="need-item">
+      <span class="need-ico">✓</span>
+      <span>Lockers provided for your belongings</span>
+    </div>
+
+    <div class="need-item">
+      <span class="need-ico">✓</span>
+      <span>Not recommended for claustrophobia</span>
+    </div>
+
+    <div class="need-item">
+      <span class="need-ico">✓</span>
+      <span>Free cancellation 24 hrs in advance</span>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="similar-wrapper reveal right">
+
+  <div class="sidebar-info-top">
+    
+    <span class="block-label">Recommended Rooms</span>
+  </div>
+
+  <h3 class="story-heading">
+    You May Also <em>Like</em>
+  </h3>
+
+  
+  <div class="similar-room">
+
+    <div class="similar-thumb">
+      <img
+        src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&auto=format&fit=crop&q=80"
+        alt="Sector Zero"
+      />
+      <div class="similar-thumb-overlay"></div>
+    </div>
+
+    <div class="similar-info">
+      <div class="similar-name">Sector Zero</div>
+      <div class="similar-meta">Sci-Fi · Hard · 60 Min</div>
+
+      <div class="similar-bottom">
+        <span class="similar-price">₹699</span>
+        <a href="#" class="similar-link">View</a>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div class="similar-room">
+
+    <div class="similar-thumb">
+      <img
+        src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=700&auto=format&fit=crop&q=80"
+        alt="Nexus Protocol"
+      />
+      <div class="similar-thumb-overlay"></div>
+    </div>
+
+    <div class="similar-info">
+      <div class="similar-name">Nexus Protocol</div>
+      <div class="similar-meta">Adventure · Expert · 75 Min</div>
+
+      <div class="similar-bottom">
+        <span class="similar-price">₹899</span>
+        <a href="#" class="similar-link">View</a>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div class="similar-room">
+
+    <div class="similar-thumb">
+      <img
+        src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?w=700&auto=format&fit=crop&q=80"
+        alt="The Oracle's Vault"
+      />
+      <div class="similar-thumb-overlay"></div>
+    </div>
+
+    <div class="similar-info">
+      <div class="similar-name">The Oracle's Vault</div>
+      <div class="similar-meta">Mystery · Medium · 60 Min</div>
+
+      <div class="similar-bottom">
+        <span class="similar-price">₹749</span>
+        <a href="#" class="similar-link">View</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<script>
+    /* =========================================
+   REVEAL ON SCROLL
+========================================= */
+
+const revealItems = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+
+  });
+},{
+  threshold: 0.15
+});
+
+revealItems.forEach((item)=>{
+  revealObserver.observe(item);
+});
+
+
+/* =========================================
+   OPTIONAL ROOM HOVER EFFECT
+========================================= */
+
+const similarRooms = document.querySelectorAll('.similar-room');
+
+similarRooms.forEach((room)=>{
+
+  room.addEventListener('mousemove',(e)=>{
+
+    const rect = room.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    room.style.background = `
+      radial-gradient(
+        circle at ${x}px ${y}px,
+        rgba(255,180,0,0.08),
+        rgba(0,0,0,0.85) 70%
+      )
+    `;
+  });
+
+  room.addEventListener('mouseleave',()=>{
+
+    room.style.background = '';
+  });
+
+});
+</script>
+
+    
+    <script src="js/components.js"></script>
+    <script src="js/home.js"></script>
+    <footer id="footer" class="footer"></footer>
+</body>
+</html>

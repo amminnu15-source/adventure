@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCAPEQUEST | Unlock the Mystery. Conquer the Challenge.</title>
+    <meta name="description" content="India's #1 premium immersive escape room experience. Book rooms, track stats, compete on leaderboards, and relive your victories.">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/service.css">
+    
+</head>
+<body>
+
+    
+    <nav id="navbar" class="navbar"></nav>
+
+════════════════════════════════════════════════════════════════════════════ -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-container">
+
+    <div class="hero-content reveal">
+      <p class="hero-eyebrow">What We Offer</p>
+
+      <h1 class="hero-title">
+        Our <span>Services</span> & Experiences
+      </h1>
+
+      <p class="hero-desc">
+        Six meticulously crafted rooms. Hundreds of puzzles. Infinite challenges designed to push your limits and deliver unforgettable experiences.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#booking" class="btn-primary">Reserve Room</a>
+        <a href="#rooms" class="btn-secondary">Explore Rooms</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script>
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+
+<section class="rooms-section section" id="rooms">
+
+  
+  <div class="rooms-overlay"></div>
+
+  
+  <div class="section-header reveal">
+    <div class="section-tag">The Rooms</div>
+
+    <h2 class="story-heading">
+      Choose Your Challenge
+    </h2>
+
+
+  
+  <div class="container">
+    <div class="rooms-grid">
+
+      
+      <div class="room-card reveal">
+
+        <div class="room-bg"
+          style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop');">
+        </div>
+
+        <div class="room-info">
+          <span class="room-tag">Horror</span>
+
+          <h3 class="room-name">Crimson Manor</h3>
+
+          <p class="room-desc">
+            A haunted Victorian mansion filled with cursed secrets.
+          </p>
+
+          <div class="room-meta">
+            <div>⏱ 60 min</div>
+            <div>💀 Expert</div>
+            <div>👥 2–6</div>
+          </div>
+
+          <a href="servicedetails.html" class="btn-primary">Book Now</a>
+        </div>
+      </div>
+
+      
+      <div class="room-card reveal">
+
+        <div class="room-bg"
+          style="background-image:url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?q=80&w=1200&auto=format&fit=crop');">
+        </div>
+
+        <div class="room-info">
+          <span class="room-tag">Sci-Fi</span>
+
+          <h3 class="room-name">Sector Zero</h3>
+
+          <p class="room-desc">
+            Escape a failing space station before meltdown.
+          </p>
+
+          <div class="room-meta">
+            <div>⏱ 60 min</div>
+            <div>🔥 Hard</div>
+            <div>👥 2–8</div>
+          </div>
+
+          <a href="servicedetails.html" class="btn-primary">Book Now</a>
+        </div>
+      </div>
+
+      
+      <div class="room-card reveal">
+
+        <div class="room-bg"
+          style="background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop');">
+        </div>
+
+        <div class="room-info">
+          <span class="room-tag">Mystery</span>
+
+          <h3 class="room-name">Oracle Vault</h3>
+
+          <p class="room-desc">
+            Decode ancient symbols before time runs out.
+          </p>
+
+          <div class="room-meta">
+            <div>⏱ 60 min</div>
+            <div>⭐ Medium</div>
+            <div>👥 2–6</div>
+          </div>
+
+          <a href="servicedetails.html" class="btn-primary">Book Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+  
+
+const rooms = document.querySelectorAll(".room-card");
+
+const section = document.querySelector(".rooms-section");
+
+const title = document.querySelector(".section-title");
+
+const subtitle = document.querySelector(".section-subtitle");
+
+
+const data = [
+  {
+    name: "Crimson Manor",
+    desc: "A haunted Victorian mansion filled with cursed secrets.",
+    bg: "linear-gradient(135deg,#1a0505,#3d0808,#000000)"
+  },
+
+  {
+    name: "Sector Zero",
+    desc: "Escape a failing space station before meltdown.",
+    bg: "linear-gradient(135deg,#00111f,#003366,#000000)"
+  },
+
+  {
+    name: "Oracle Vault",
+    desc: "Decode ancient symbols before time runs out.",
+    bg: "linear-gradient(135deg,#14001f,#36004d,#000000)"
+  }
+];
+
+
+rooms.forEach((card, i) => {
+
+  card.addEventListener("mouseenter", () => {
+
+    section.style.background = data[i].bg;
+
+    title.textContent = data[i].name;
+
+    subtitle.textContent = data[i].desc;
+  });
+
+  
+  card.addEventListener("click", () => {
+
+    section.style.background = data[i].bg;
+
+    title.textContent = data[i].name;
+
+    subtitle.textContent = data[i].desc;
+  });
+
+});
+
+
+
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", revealElements);
+
+function revealElements(){
+
+  reveals.forEach((el)=>{
+
+    const top = el.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 80){
+
+      el.classList.add("active");
+    }
+  });
+}
+
+
+</script>
+
+
+<section class="features-section section">
+
+  
+  <div class="container">
+    <div class="section-header reveal">
+
+      <div class="section-tag">Our Journey</div>
+
+      <h2 class="story-heading">
+        Seven Years of Unlocking
+      </h2>
+
+      <p class="section-subtitle">
+        From a small experimental escape room to a full cinematic experience studio built for bold minds.
+      </p>
+
+    </div>
+  </div>
+
+  
+  <div class="container">
+    <div class="features-layout">
+
+
+<div class="features-left reveal">
+
+  <p class="features-label">Experience Overview</p>
+
+  <h3 class="features-heading" id="featureTitle">
+    Cinematic Set Design
+  </h3>
+
+  <p class="features-body" id="featureDesc">
+    Every room is built with Hollywood-level precision combining storytelling, puzzles, and immersive environments.
+  </p>
+
+  
+  <div class="features-story">
+    <h4>Our Mission</h4>
+    <p>
+      To transform escape rooms into fully immersive cinematic experiences where players don’t just solve puzzles — they live inside the story.
+    </p>
+  </div>
+
+  
+  <div class="features-timeline">
+    <div>
+      <span>2018</span>
+      <p>First experimental escape room launched</p>
+    </div>
+    <div>
+      <span>2021</span>
+      <p>Expanded into cinematic themed worlds</p>
+    </div>
+    <div>
+      <span>2024</span>
+      <p>Reached 50K+ global players milestone</p>
+    </div>
+  </div>
+
+  
+  <div class="features-stats">
+    <div>
+      <span>50K+</span>
+      <small>Players</small>
+    </div>
+    <div>
+      <span>6</span>
+      <small>Worlds</small>
+    </div>
+    <div>
+      <span>4.9</span>
+      <small>Rating</small>
+    </div>
+  </div>
+
+  
+  <a href="#rooms" class="btn-primary">Explore Rooms</a>
+
+</div>
+
+      
+      <div class="features-right reveal">
+
+        <div class="feature-item">
+          <div class="feature-num">01</div>
+          <div>
+            <div class="feature-title">Cinematic Set Design</div>
+            <div class="feature-desc">Hollywood-level immersive environments.</div>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">02</div>
+          <div>
+            <div class="feature-title">Live Game Masters</div>
+            <div class="feature-desc">Real-time guidance during gameplay.</div>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">03</div>
+          <div>
+            <div class="feature-title">Adaptive Difficulty</div>
+            <div class="feature-desc">Smart puzzle scaling for all levels.</div>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">04</div>
+          <div>
+            <div class="feature-title">Private Events</div>
+            <div class="feature-desc">Exclusive bookings for groups.</div>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-num">05</div>
+          <div>
+            <div class="feature-title">Post Game Lounge</div>
+            <div class="feature-desc">Relax after your escape mission.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+    
+const items = document.querySelectorAll(".feature-item");
+
+const ttle = document.getElementById("featureTitle");
+const desc = document.getElementById("featureDesc");
+
+const data = [
+  {
+    title: "Cinematic Set Design",
+    desc: "Hollywood-level immersive environments crafted with storytelling precision."
+  },
+  {
+    title: "Live Game Masters",
+    desc: "Real-time human guidance enhances your escape experience."
+  },
+  {
+    title: "Adaptive Difficulty",
+    desc: "System automatically adjusts challenge based on team skill."
+  },
+  {
+    title: "Private Events",
+    desc: "Exclusive bookings for corporate and personal celebrations."
+  },
+  {
+    title: "Post Game Lounge",
+    desc: "Relax and relive your escape experience with your team."
+  }
+];
+
+items.forEach((item, i) => {
+  item.addEventListener("mouseenter", () => {
+    title.textContent = data[i].ttle;
+    desc.textContent = data[i].desc;
+  });
+
+  item.addEventListener("click", () => {
+    title.textContent = data[i].ttle;
+    desc.textContent = data[i].desc;
+  });
+});
+</script>
+
+
+<section class="booking-section section" id="booking">
+
+  <div class="booking-circle"></div>
+
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="section-tag">Book Your Experience</div>
+      <h2 class="story-heading">Step Into The Game</h2>
+      <p class="section-subtitle">
+        Choose your escape package and enter a world where every second matters.
+      </p>
+    </div>
+
+    <div class="booking-layout">
+
+      
+      <div class="booking-left reveal">
+
+        <p class="booking-tagline">
+          Not just a booking — it's your entry into a fully immersive cinematic escape world designed to challenge, thrill, and transform your team experience.
+        </p>
+
+        
+        <div class="booking-trust">
+          <div>✔ Instant confirmation</div>
+          <div>✔ Live Game Master support</div>
+          <div>✔ Safe & immersive environment</div>
+        </div>
+
+        
+        <div class="booking-highlight">
+          <h4>Why Players Love Us</h4>
+          <p>
+            Every session is handcrafted with cinematic storytelling, real-time puzzles, and immersive environments that make you forget reality.
+          </p>
+        </div>
+
+        
+        <div class="booking-perks">
+          <div class="perk-item"><span class="perk-check">✓</span> Free rescheduling (24h)</div>
+          <div class="perk-item"><span class="perk-check">✓</span> Group discounts available</div>
+          <div class="perk-item"><span class="perk-check">✓</span> Gift vouchers anytime</div>
+          <div class="perk-item"><span class="perk-check">✓</span> Locker & safety support</div>
+        </div>
+
+        
+        <a href="#" class="btn-primary">Check Availability</a>
+
+      </div>
+
+      
+      <div class="reveal">
+        <div class="packages-grid">
+
+          <div class="pkg-card">
+            <div>
+              <div class="pkg-name">Standard Session</div>
+              <div class="pkg-detail">1 Room · 60 Min · Up to 6 Players</div>
+            </div>
+            <div class="pkg-pricing">
+              <div class="pkg-price">₹799</div>
+              <div class="pkg-per">per person</div>
+            </div>
+            <div class="pkg-book-btn">
+              <a href="#" class="pkg-btn">Book Now →</a>
+            </div>
+          </div>
+
+          <div class="pkg-card featured">
+            <div class="pkg-badge-featured">Most Popular</div>
+            <div>
+              <div class="pkg-name">Ultimate Duo</div>
+              <div class="pkg-detail">2 Rooms · Flexible Group · Same Day</div>
+            </div>
+            <div class="pkg-pricing">
+              <div class="pkg-price">₹1,399</div>
+              <div class="pkg-per">per person</div>
+            </div>
+            <div class="pkg-book-btn">
+              <a href="#" class="pkg-btn">Book Now →</a>
+            </div>
+          </div>
+
+          <div class="pkg-card">
+            <div>
+              <div class="pkg-name">Private Takeover</div>
+              <div class="pkg-detail">All Rooms · Exclusive Venue</div>
+            </div>
+            <div class="pkg-pricing">
+              <div class="pkg-price">₹4,999</div>
+              <div class="pkg-per">flat rate</div>
+            </div>
+            <div class="pkg-book-btn">
+              <a href="#" class="pkg-btn">Enquire →</a>
+            </div>
+          </div>
+
+          <div class="pkg-card">
+            <div>
+              <div class="pkg-name">Corporate Package</div>
+              <div class="pkg-detail">Team Building · Facilitator · Debrief</div>
+            </div>
+            <div class="pkg-pricing">
+              <div class="pkg-price">Custom</div>
+              <div class="pkg-per">quote</div>
+            </div>
+            <div class="pkg-book-btn">
+              <a href="#" class="pkg-btn">Contact →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+
+const cards = document.querySelectorAll(".pkg-card");
+
+cards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    cards.forEach(c => c.classList.remove("active"));
+    card.classList.add("active");
+  });
+
+  card.addEventListener("click", () => {
+    cards.forEach(c => c.classList.remove("active"));
+    card.classList.add("active");
+  });
+});
+</script>
+
+      <footer id="footer" class="footer"></footer>
+
+    
+    <script src="js/components.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

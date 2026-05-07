@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Command | ESCAPEQUEST Premium</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="gaming-interface">
+
+    <div class="dashboard-shell">
+        
+        <!-- SIDEBAR ELITE -->
+        <aside class="sidebar-elite">
+            <div class="brand-elite">
+                <a href="index.html" class="b-main">
+                    <i class="fas fa-key logo-icon" style="color: var(--accent-gold); font-size: 1.2rem;"></i>
+                    <span class="logo-text">ESCAPEQUEST</span>
+                </a>
+                <button id="sidebar-close" class="icon-btn-elite mobile-only"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="agent-profile-sidebar">
+                <img src="https://ui-avatars.com/api/?name=Agent+Sterling&background=FFB400&color=000" class="avatar-sidebar" alt="Profile">
+                <div class="u-text">
+                    <p class="u-name">Agent Sterling</p>
+                    <p class="u-rank">Elite Ops Level 05</p>
+                </div>
+            </div>
+
+            <nav class="nav-elite">
+                <a href="#" class="nav-item-elite active" data-target="overview">
+                    <i class="fas fa-th-large"></i> <span>Overview</span>
+                </a>
+                <a href="#" class="nav-item-elite" data-target="missions">
+                    <i class="fas fa-calendar-check"></i> <span>Missions</span>
+                </a>
+                <a href="#" class="nav-item-elite" data-target="team">
+                    <i class="fas fa-users-cog"></i> <span>Squad</span>
+                </a>
+                <a href="#" class="nav-item-elite" data-target="settings">
+                    <i class="fas fa-cog"></i> <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="nav-item-elite logout-link-elite">
+                    <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN ELITE -->
+        <main class="main-elite">
+            
+            <!-- TOPBAR ELITE -->
+            <header class="topbar-elite">
+                <div class="t-left">
+                    <button id="sidebar-toggle" class="icon-btn-elite hamburger-elite"><i class="fas fa-bars"></i></button>
+                    <div class="search-elite">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search operational data...">
+                    </div>
+                </div>
+
+                <div class="controls-elite">
+                    <a href="index.html" class="icon-btn-elite" title="Home"><i class="fas fa-home"></i></a>
+                    <button class="icon-btn-elite" id="theme-toggle"><i class="fas fa-moon"></i></button>
+                    <button class="icon-btn-elite">
+                        <i class="far fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+                    <button class="btn-rtl-elite" id="rtl-toggle">RTL</button>
+                </div>
+            </header>
+
+            <div class="content-viewport">
+                
+                <!-- SECTION: OVERVIEW -->
+                <section id="section-overview" class="section-elite active">
+                    <div class="welcome-elite">
+                        <h1>Welcome back, <span class="accent">Agent Sterling</span></h1>
+                        <p>Mission status: Operational. Tactical updates pending for 3 mission nodes.</p>
+                    </div>
+
+                    <div class="grid-elite">
+                        <div class="card-elite stat-card-elite">
+                            <div class="stat-header">
+                                <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                                <span class="stat-trend up">+12% <i class="fas fa-arrow-up"></i></span>
+                            </div>
+                            <span class="stat-value">1,284</span>
+                            <span class="stat-label">Total Bookings</span>
+                        </div>
+                        <div class="card-elite stat-card-elite">
+                            <div class="stat-header">
+                                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                                <span class="stat-trend up">+8% <i class="fas fa-arrow-up"></i></span>
+                            </div>
+                            <span class="stat-value">42</span>
+                            <span class="stat-label">Active Players</span>
+                        </div>
+                        <div class="card-elite stat-card-elite">
+                            <div class="stat-header">
+                                <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                                <span class="stat-trend down">-2% <i class="fas fa-arrow-down"></i></span>
+                            </div>
+                            <span class="stat-value">94%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                        <div class="card-elite stat-card-elite">
+                            <div class="stat-header">
+                                <div class="stat-icon"><i class="fas fa-stopwatch"></i></div>
+                                <span class="stat-trend up">04:12 <i class="fas fa-arrow-up"></i></span>
+                            </div>
+                            <span class="stat-value">48:20</span>
+                            <span class="stat-label">Avg Escape Time</span>
+                        </div>
+                        <div class="card-elite stat-card-elite">
+                            <div class="stat-header">
+                                <div class="stat-icon"><i class="fas fa-heartbeat"></i></div>
+                                <span class="stat-trend up">99.9%</span>
+                            </div>
+                            <span class="stat-value">HEALTHY</span>
+                            <span class="stat-label">System Status</span>
+                        </div>
+                        <div class="card-elite stat-card-elite">
+                            <div class="stat-header">
+                                <div class="stat-icon"><i class="fas fa-microchip"></i></div>
+                                <span class="stat-trend">STABLE</span>
+                            </div>
+                            <span class="stat-value">12.4ms</span>
+                            <span class="stat-label">Neural Latency</span>
+                        </div>
+                    </div>
+
+                    <div class="grid-elite overview-details-grid" style="margin-top: 1.5rem;">
+                        <div class="card-elite">
+                            <h3>Mission Efficiency Graph</h3>
+                            <div class="graph-container-elite" style="height: 200px; margin-top: 1rem; position: relative;">
+                                <svg width="100%" height="100%" viewBox="0 0 400 150" preserveAspectRatio="none">
+                                    <defs>
+                                        <linearGradient id="graphGradient" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="var(--accent-gold)" stop-opacity="0.3"/>
+                                            <stop offset="100%" stop-color="var(--accent-gold)" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M0,150 L0,80 L50,60 L100,90 L150,40 L200,70 L250,30 L300,50 L350,20 L400,60 L400,150 Z" fill="url(#graphGradient)" />
+                                    <path d="M0,80 L50,60 L100,90 L150,40 L200,70 L250,30 L300,50 L350,20 L400,60" fill="none" stroke="var(--accent-gold)" stroke-width="3" />
+                                </svg>
+                                <div class="graph-labels" style="display: flex; justify-content: space-between; margin-top: 0.5rem; color: var(--text-muted); font-size: 0.7rem;">
+                                    <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-elite">
+                            <h3>Live Mission Feed</h3>
+                            <div class="feed-elite" style="margin-top: 1rem;">
+                                <!-- Feed content injected via JS -->
+                            </div>
+                        </div>
+                        <div class="card-elite">
+                            <h3>Squad Performance</h3>
+                            <div class="performance-list-elite" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                                <div class="perf-item">
+                                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.5rem;">
+                                        <span>Logic Completion</span>
+                                        <span>88%</span>
+                                    </div>
+                                    <div class="progress-elite" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px;">
+                                        <div style="width: 88%; height: 100%; background: var(--accent-gold); border-radius: 3px;"></div>
+                                    </div>
+                                </div>
+                                <div class="perf-item">
+                                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.5rem;">
+                                        <span>Extraction Speed</span>
+                                        <span>72%</span>
+                                    </div>
+                                    <div class="progress-elite" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px;">
+                                        <div style="width: 72%; height: 100%; background: var(--accent-gold); border-radius: 3px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-elite" style="margin-top: 1.5rem;">
+                        <div class="card-elite quick-action-card">
+                            <i class="fas fa-plus-circle accent"></i>
+                            <span>New Mission</span>
+                        </div>
+                        <div class="card-elite quick-action-card">
+                            <i class="fas fa-file-export accent"></i>
+                            <span>Export Intel</span>
+                        </div>
+                        <div class="card-elite quick-action-card">
+                            <i class="fas fa-shield-alt accent"></i>
+                            <span>Security Scan</span>
+                        </div>
+                        <div class="card-elite quick-action-card">
+                            <i class="fas fa-sync accent"></i>
+                            <span>Refresh Data</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: BOOKINGS -->
+                <section id="section-bookings" class="section-elite">
+                    <div class="welcome-elite">
+                        <h1>Extraction <span class="accent">Schedules</span></h1>
+                        <p>Manage upcoming squad deployments and mission windows.</p>
+                    </div>
+                    <div class="grid-elite" style="grid-template-columns: 1fr 1fr;">
+                        <div class="card-elite calendar-card-elite">
+                            <div class="c-head"><h3>Tactical Calendar</h3></div>
+                            <div class="calendar-visual-placeholder">
+                                <!-- Modern Calendar Grid -->
+                                <div class="cal-grid">
+                                    <div class="cal-day muted">28</div><div class="cal-day muted">29</div><div class="cal-day muted">30</div><div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div>
+                                    <div class="cal-day">5</div><div class="cal-day active">6<span class="cal-dot"></span></div><div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div>
+                                    <div class="cal-day">12</div><div class="cal-day">13</div><div class="cal-day event">14<span class="cal-dot gold"></span></div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day event">18<span class="cal-dot gold"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-elite">
+                            <h3>Upcoming Deployments</h3>
+                            <div class="booking-list-elite">
+                                <div class="b-item">
+                                    <div class="b-date"><span>MAY</span><strong>14</strong></div>
+                                    <div class="b-details">
+                                        <h4>The Laboratory</h4>
+                                        <p>Squad: Alpha-9 | 07:30 PM</p>
+                                    </div>
+                                    <span class="badge success">Confirmed</span>
+                                </div>
+                                <div class="b-item">
+                                    <div class="b-date"><span>MAY</span><strong>18</strong></div>
+                                    <div class="b-details">
+                                        <h4>Cyber Heist</h4>
+                                        <p>Squad: Ghost Walkers | 04:00 PM</p>
+                                    </div>
+                                    <span class="badge warning">Pending</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: MISSIONS -->
+                <section id="section-missions" class="section-elite">
+                    <div class="welcome-elite">
+                        <h1>Mission <span class="accent">Strategy</span></h1>
+                        <p>Available extraction nodes and active containment zones.</p>
+                    </div>
+                    <div class="grid-elite mission-strategy-grid">
+                        <div class="card-elite mission-card">
+                            <div class="m-img">
+                                <img src="images/hauntedmansion.jpg" alt="Haunted Manor">
+                            </div>
+                            <h4>Haunted Manor</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Level 02 | Extraction Zone</p>
+                            <div class="m-stats-mini" style="display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 1rem;">
+                                <span><i class="fas fa-users"></i> 4/6</span>
+                                <span><i class="fas fa-clock"></i> 60m</span>
+                            </div>
+                            <div class="m-briefing" style="margin-bottom: 1.5rem; font-size: 0.85rem; line-height: 1.4; opacity: 0.8;">
+                                <p>Standard extraction protocol in a high-tension manor environment. Recommended squad size: 4-6 agents.</p>
+                            </div>
+                            <button class="btn-simple-glow btn-large-elite" style="width: 100%;">Node Details</button>
+                        </div>
+                        <div class="card-elite mission-card">
+                            <div class="m-img">
+                                <img src="images/laboratory.webp" alt="Secret Lab">
+                            </div>
+                            <h4>Secret Lab</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Level 03 | Containment</p>
+                            <div class="m-stats-mini" style="display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 1rem;">
+                                <span><i class="fas fa-users"></i> 3/4</span>
+                                <span><i class="fas fa-clock"></i> 75m</span>
+                            </div>
+                            <div class="m-briefing" style="margin-bottom: 1.5rem; font-size: 0.85rem; line-height: 1.4; opacity: 0.8;">
+                                <p>High-security containment breach. Requires advanced tech specialization and rapid logic solving.</p>
+                            </div>
+                            <button class="btn-simple-glow btn-large-elite" style="width: 100%;">Node Details</button>
+                        </div>
+                        <div class="card-elite mission-card">
+                            <div class="m-img">
+                                <img src="images/adventure.jpg" alt="The Vault">
+                            </div>
+                            <h4>The Vault</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Level 04 | High Security</p>
+                            <div class="m-stats-mini" style="display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 1rem;">
+                                <span><i class="fas fa-users"></i> 0/5</span>
+                                <span><i class="fas fa-clock"></i> 90m</span>
+                            </div>
+                            <div class="m-briefing" style="margin-bottom: 1.5rem; font-size: 0.85rem; line-height: 1.4; opacity: 0.8;">
+                                <p>Infiltrate the most secure bank in the district. Heavy encryption and multi-layered security protocols expected.</p>
+                            </div>
+                            <button class="btn-simple-glow btn-large-elite" style="width: 100%;">Node Details</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: SQUAD (Previously Team) -->
+                <section id="section-team" class="section-elite">
+                    <div class="welcome-elite">
+                        <h1>Operational <span class="accent">Squads</span></h1>
+                        <p>Monitor agent status and squad synergy metrics.</p>
+                    </div>
+                    <div class="grid-elite">
+                        <div class="card-elite agent-card">
+                            <div class="agent-header">
+                                <img src="https://ui-avatars.com/api/?name=Agent+X&background=FFB400&color=000" class="avatar-sidebar" style="width: 40px; height: 40px;" alt="Agent X">
+                                <div class="agent-meta">
+                                    <h4>Agent X</h4>
+                                    <span class="accent" style="font-size: 0.7rem;">Tactical Lead</span>
+                                </div>
+                            </div>
+                            <div class="agent-stats">
+                                <div class="a-stat"><span>Missions</span><strong>156</strong></div>
+                                <div class="a-stat"><span>Success</span><strong>98%</strong></div>
+                                <div class="a-stat"><span>Expertise</span><strong>TECH</strong></div>
+                            </div>
+                            <div class="agent-tags" style="margin: 1rem 0;">
+                                <span class="tag-elite">Infiltrator</span>
+                                <span class="tag-elite">Encryption</span>
+                                <span class="tag-elite">Lead</span>
+                            </div>
+                            <button class="btn-simple-glow btn-large-elite" style="width: 100%;">View Profile</button>
+                        </div>
+                        <div class="card-elite agent-card">
+                            <div class="agent-header">
+                                <img src="https://ui-avatars.com/api/?name=Agent+V&background=000&color=FFB400" class="avatar-sidebar" style="width: 40px; height: 40px;" alt="Agent V">
+                                <div class="agent-meta">
+                                    <h4>Agent V</h4>
+                                    <span class="accent" style="font-size: 0.7rem;">Extraction Expert</span>
+                                </div>
+                            </div>
+                            <div class="agent-stats">
+                                <div class="a-stat"><span>Missions</span><strong>89</strong></div>
+                                <div class="a-stat"><span>Success</span><strong>92%</strong></div>
+                                <div class="a-stat"><span>Expertise</span><strong>HEAVY</strong></div>
+                            </div>
+                            <div class="agent-tags" style="margin: 1rem 0;">
+                                <span class="tag-elite">Heavy</span>
+                                <span class="tag-elite">Stealth</span>
+                                <span class="tag-elite">Guardian</span>
+                            </div>
+                            <button class="btn-simple-glow btn-large-elite" style="width: 100%;">View Profile</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: ACHIEVEMENTS -->
+                <section id="section-achievements" class="section-elite">
+                    <div class="welcome-elite">
+                        <h1>Hall of <span class="accent">Valor</span></h1>
+                        <p>Commemorating extraordinary agent performance.</p>
+                    </div>
+                    <div class="grid-elite">
+                        <div class="card-elite achievement-card platinum">
+                            <div class="badge-icon"><i class="fas fa-crown"></i></div>
+                            <h4>Ghost Protocol</h4>
+                            <p>Complete 5 missions with zero hints.</p>
+                            <div class="badge-tier">PLATINUM</div>
+                        </div>
+                        <div class="card-elite achievement-card gold">
+                            <div class="badge-icon"><i class="fas fa-bolt"></i></div>
+                            <h4>Silent Extractor</h4>
+                            <p>Finish mission in under 40 minutes.</p>
+                            <div class="badge-tier">GOLD</div>
+                        </div>
+                        <div class="card-elite achievement-card silver">
+                            <div class="badge-icon"><i class="fas fa-brain"></i></div>
+                            <h4>Mind Over Matter</h4>
+                            <p>Solve a level 5 puzzle node.</p>
+                            <div class="badge-tier">SILVER</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: SETTINGS -->
+                <section id="section-settings" class="section-elite">
+                    <div class="welcome-elite">
+                        <h1>Agent <span class="accent">Preferences</span></h1>
+                        <p>Configure your tactical interface and operational parameters.</p>
+                    </div>
+                    <div class="grid-elite">
+                        <div class="card-elite">
+                            <h3>Security Protocol</h3>
+                            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span>Two-Factor Auth</span>
+                                    <span style="color: #4caf50; font-size: 0.8rem; font-weight: 700;">ACTIVE</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span>Session Timeout</span>
+                                    <span style="color: var(--accent-gold); font-size: 0.8rem; font-weight: 700;">30 MINS</span>
+                                </div>
+                                <button class="btn-simple-glow btn-large-elite" style="padding: 0.8rem;">Update Security Protocol</button>
+                            </div>
+                        </div>
+                        <div class="card-elite">
+                            <h3>Neural Interface</h3>
+                            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span>Visual Theme</span>
+                                    <select style="background: var(--glass-bg); color: var(--text-main); border: 1px solid var(--glass-border); padding: 0.3rem 0.6rem; border-radius: 4px;">
+                                        <option style="background: var(--bg-surface); color: var(--text-main);">Dark Mode</option>
+                                        <option style="background: var(--bg-surface); color: var(--text-main);">Light Mode</option>
+                                        <option style="background: var(--bg-surface); color: var(--text-main);">Cyber Blue</option>
+                                    </select>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span>Interface Language</span>
+                                    <select style="background: var(--glass-bg); color: var(--text-main); border: 1px solid var(--glass-border); padding: 0.3rem 0.6rem; border-radius: 4px;">
+                                        <option style="background: var(--bg-surface); color: var(--text-main);">English (US)</option>
+                                        <option style="background: var(--bg-surface); color: var(--text-main);">Hindi (IN)</option>
+                                        <option style="background: var(--bg-surface); color: var(--text-main);">Arabic (SA)</option>
+                                    </select>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span>RTL Alignment</span>
+                                    <input type="checkbox" id="settings-rtl-check">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-elite">
+                            <h3>Alert Configuration</h3>
+                            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span>Mission Critical Alerts</span>
+                                    <span style="color: #4caf50; font-size: 0.7rem;">PUSH + EMAIL</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span>Squad Chat Notifications</span>
+                                    <span style="color: #4caf50; font-size: 0.7rem;">ENABLED</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span>Marketing Intel</span>
+                                    <span style="color: #f44336; font-size: 0.7rem;">DISABLED</span>
+                                </div>
+                                <button class="btn-simple-glow btn-large-elite" style="padding: 0.8rem;">Manage Notifications</button>
+                            </div>
+                        </div>
+                        <div class="card-elite">
+                            <h3>Linked Identities</h3>
+                            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="display: flex; gap: 1rem; align-items: center; background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
+                                    <i class="fab fa-google" style="color: #db4437;"></i>
+                                    <span style="font-size: 0.85rem;">google_agent_392</span>
+                                    <span style="margin-left: auto; color: #4caf50; font-size: 0.7rem;">CONNECTED</span>
+                                </div>
+                                <div style="display: flex; gap: 1rem; align-items: center; background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
+                                    <i class="fab fa-discord" style="color: #7289da;"></i>
+                                    <span style="font-size: 0.85rem;">Sterling#4921</span>
+                                    <span style="margin-left: auto; color: var(--accent-gold); font-size: 0.7rem;">SYNCING</span>
+                                </div>
+                                <button class="btn-simple-glow btn-large-elite" style="padding: 0.8rem; border-color: rgba(255,255,255,0.2); background: transparent;">Add Identity Link</button>
+                            </div>
+                        </div>
+                        <div class="card-elite">
+                            <h3>Operational Tier</h3>
+                            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="text-align: center; background: linear-gradient(135deg, var(--accent-gold), #ffcc00); color: #000; padding: 1.5rem; border-radius: 12px;">
+                                    <h4 style="margin: 0; font-family: var(--font-body); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Elite Alpha Tier</h4>
+                                    <p style="font-size: 1.5rem; font-weight: 900; margin: 0.5rem 0;">₹1,299 <span style="font-size: 0.8rem; font-weight: 400;">/ mo</span></p>
+                                    <span style="font-size: 0.7rem; font-weight: 700;">Next extraction: JUNE 01</span>
+                                </div>
+                                <button class="btn-simple-glow btn-large-elite" style="padding: 0.8rem;">Upgrade Operation</button>
+                            </div>
+                        </div>
+                        <div class="card-elite">
+                            <h3>Data Retention</h3>
+                            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                                <p style="font-size: 0.8rem;"><strong>Mission Logs:</strong> 365 Days</p>
+                                <p style="font-size: 0.8rem;"><strong>Intel Backup:</strong> Daily at 02:00</p>
+                                <button class="btn-simple-glow btn-large-elite" style="padding: 0.8rem; margin-top: 1rem; color: #f44336; border-color: rgba(244, 67, 54, 0.3);">Clear Cache</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

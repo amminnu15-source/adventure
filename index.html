@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCAPEQUEST | Unlock the Mystery. Conquer the Challenge.</title>
+    <meta name="description" content="India's #1 premium immersive escape room experience. Book rooms, track stats, compete on leaderboards, and relive your victories.">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home2.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar"></nav>
+
+
+
+<section class="hero" id="home">
+
+  
+  <canvas id="heroCanvas" class="hero-canvas"></canvas>
+
+  
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-vignette"></div>
+
+  
+  <div class="hero-bg-image">
+    <img 
+      src="images/escape-room-hero.jpg" 
+      alt="Escape Room Interior"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="container hero-container">
+    <div class="hero-content reveal">
+
+      <div class="hero-eyebrow">
+        Est. 2018 · Nellore's Premier Escape Experience
+      </div>
+
+      <h1 class="hero-title">
+        Can You <span class="accent-word">Escape</span> in Time?
+      </h1>
+
+      <p class="hero-desc">
+        Step inside immersive worlds. Solve cryptic puzzles, crack hidden codes,
+        and unravel dark mysteries before the clock reaches zero.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#booking" class="btn-primary">
+          Book Your Escape <span>→</span>
+        </a>
+
+        <a href="#rooms" class="btn-primary btn-secondary">
+          Explore Rooms <span>→</span>
+        </a>
+      </div>
+
+    </div>
+
+    
+    <div class="hero-timer reveal reveal-delay-2">
+      <svg class="timer-ring" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="88" class="timer-bg"></circle>
+
+        <circle
+          cx="100"
+          cy="100"
+          r="88"
+          class="timer-progress"
+          id="timerRingCircle"
+          transform="rotate(-90 100 100)"
+        ></circle>
+      </svg>
+
+      <div class="timer-digits" id="timerDigits">60:00</div>
+      <div class="timer-label">Time Remaining</div>
+    </div>
+
+  </div>
+
+  
+  <div class="hero-scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+
+</section>
+<script>
+    /* =========================================
+   HERO PARTICLE CANVAS
+========================================= */
+const canvas = document.getElementById("heroCanvas");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+
+function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = document.querySelector(".hero").offsetHeight;
+}
+
+class Particle{
+    constructor(){
+        this.reset();
+    }
+
+    reset(){
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.opacity = Math.random() * 0.5;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
+    }
+
+    update(){
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if(
+            this.x < 0 ||
+            this.x > canvas.width ||
+            this.y < 0 ||
+            this.y > canvas.height
+        ){
+            this.reset();
+        }
+    }
+
+    draw(){
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+        ctx.fillStyle = "rgba(255,180,0," + this.opacity + ")";
+        ctx.fill();
+    }
+}
+
+function initParticles(){
+    particles = Array.from({length:80},()=>new Particle());
+}
+
+function animateParticles(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    particles.forEach(p=>{
+        p.update();
+        p.draw();
+    });
+
+    requestAnimationFrame(animateParticles);
+}
+
+resizeCanvas();
+initParticles();
+animateParticles();
+
+window.addEventListener("resize",()=>{
+    resizeCanvas();
+    initParticles();
+});
+
+let totalSeconds = 3600;
+
+const timerDigits = document.getElementById("timerDigits");
+const timerRingCircle = document.getElementById("timerRingCircle");
+
+const circumference = 2 * Math.PI * 88;
+timerRingCircle.setAttribute("stroke-dasharray", circumference);
+
+function updateTimer(){
+    if(totalSeconds <= 0){
+        totalSeconds = 3600;
+    }
+
+    totalSeconds--;
+
+    const mins = Math.floor(totalSeconds / 60);
+    const secs = totalSeconds % 60;
+
+    timerDigits.textContent =
+        `${String(mins).padStart(2,"0")}:${String(secs).padStart(2,"0")}`;
+
+    const progress = totalSeconds / 3600;
+
+    timerRingCircle.setAttribute(
+        "stroke-dashoffset",
+        circumference * (1 - progress)
+    );
+}
+
+updateTimer();
+setInterval(updateTimer,1000);
+</script>
+
+<div class="marquee-section" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item"><span>Unlock the Mystery</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>6 Unique Rooms</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>2–8 Players</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>60 Minute Countdown</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>Solve. Escape. Triumph.</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>Open 7 Days a Week</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>Team Events Welcome</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>Unlock the Mystery</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>6 Unique Rooms</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>2–8 Players</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>60 Minute Countdown</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>Solve. Escape. Triumph.</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>Open 7 Days a Week</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span>Team Events Welcome</span><span class="marquee-dot"></span></div>
+  </div>
+</div>
+<!-- =========================
+ROOMS SECTION
+========================= -->
+<section class="section rooms-section" id="rooms">
+  <div class="container">
+
+    
+    <div class="section-header reveal">
+      <div class="section-tag">Our Experiences</div>
+      <h2 class="section-title">Choose Your Nightmare</h2>
+      <p class="section-subtitle">
+        Six fully immersive rooms, each with its own universe of puzzles,
+        lore, and heart-pounding tension.
+      </p>
+    </div>
+
+    <div class="rooms-grid">
+
+      
+      <article class="room-card featured-room reveal">
+        <img src="../images/mission-room.jpg"
+             alt="The Alchemist's Tomb"
+             class="room-image">
+
+        <div class="room-overlay"></div>
+
+        <div class="room-info">
+          <span class="room-difficulty">Expert</span>
+          <h3 class="room-name">The Alchemist's Tomb</h3>
+          <div class="room-meta">
+            <span>⏱ 60 Min</span>
+            <span>👥 2–8 Players</span>
+            <span>🔓 18% Escaped</span>
+          </div>
+          <a href="#booking" class="btn-primary room-btn">Book Now</a>
+        </div>
+      </article>
+
+      
+      <article class="room-card reveal">
+        <img src="../images/room2.webp"
+             alt="Crimson Manor"
+             class="room-image">
+
+        <div class="room-overlay"></div>
+
+        <div class="room-info">
+          <span class="room-difficulty">Hard</span>
+          <h3 class="room-name">Crimson Manor</h3>
+          <div class="room-meta">
+            <span>⏱ 60 Min</span>
+            <span>👥 3–6 Players</span>
+          </div>
+          <a href="#booking" class="btn-primary room-btn">Book Now</a>
+        </div>
+      </article>
+
+      
+      <article class="room-card reveal">
+        <img src="../images/room3.jpg"
+             alt="Lost Laboratory"
+             class="room-image">
+
+        <div class="room-overlay"></div>
+
+        <div class="room-info">
+          <span class="room-difficulty">Medium</span>
+          <h3 class="room-name">Lost Laboratory</h3>
+          <div class="room-meta">
+            <span>⏱ 60 Min</span>
+            <span>👥 2–6 Players</span>
+          </div>
+          <a href="#booking" class="btn-primary room-btn">Book Now</a>
+        </div>
+      </article>
+
+      
+      <article class="room-card reveal">
+        <img src="../images/escape-room.jpg"
+             alt="The Vault"
+             class="room-image">
+
+        <div class="room-overlay"></div>
+
+        <div class="room-info">
+          <span class="room-difficulty">Expert</span>
+          <h3 class="room-name">The Vault</h3>
+          <div class="room-meta">
+            <span>⏱ 60 Min</span>
+            <span>👥 2–5 Players</span>
+          </div>
+          <a href="#booking" class="btn-primary room-btn">Book Now</a>
+        </div>
+      </article>
+
+      
+      <article class="room-card reveal">
+        <img src="../images/room5.webp"
+             alt="Deep Space"
+             class="room-image">
+
+        <div class="room-overlay"></div>
+
+        <div class="room-info">
+          <span class="room-difficulty">Medium</span>
+          <h3 class="room-name">Deep Space</h3>
+          <div class="room-meta">
+            <span>⏱ 60 Min</span>
+            <span>👥 2–8 Players</span>
+          </div>
+          <a href="#booking" class="btn-primary room-btn">Book Now</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+<script>
+    /* =========================
+REVEAL ON SCROLL
+========================= */
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+revealElements.forEach(el => observer.observe(el));
+
+/* =========================
+OPTIONAL PARALLAX HOVER
+========================= */
+document.querySelectorAll(".room-card").forEach(card => {
+  card.addEventListener("mousemove", e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const moveX = (x / rect.width - 0.5) * 10;
+    const moveY = (y / rect.height - 0.5) * 10;
+
+    const image = card.querySelector(".room-image");
+    image.style.transform = `scale(1.08) translate(${moveX}px, ${moveY}px)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    const image = card.querySelector(".room-image");
+    image.style.transform = "scale(1)";
+  });
+});
+</script>
+
+
+<section class="section experience-section" id="experience">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="section-tag">Why Breakout?</div>
+      <h4 class="section-title">Not Just a Game.<br>An Experience.</h4>
+      <p class="section-subtitle">
+        Every detail is engineered to immerse you in a world of tension, mystery, and adrenaline.
+      </p>
+    </div>
+
+    <div class="experience-split">
+
+      
+      <div class="experience-visual reveal">
+        <div class="exp-tag">Since 2018</div>
+
+        <div class="exp-main-img">
+          <img src="../images/hauntedmansion.jpg" alt="Escape Room Experience">
+        </div>
+
+        <div class="exp-float-card">
+          <div class="exp-float-value">60<span>m</span></div>
+          <div class="exp-float-label">Pure Adrenaline</div>
+        </div>
+      </div>
+
+      
+      <div class="experience-content reveal reveal-delay-2">
+
+        <div class="features-list">
+
+          <div class="feature-item">
+            <div class="feature-icon-wrap">
+              <img src="../images/prisonimage.webp" alt="">
+            </div>
+            <div>
+              <div class="feature-text-title">Cinematic Set Design</div>
+              <div class="feature-text-desc">
+                Hand-crafted immersive environments with theatrical props and realistic atmospheres.
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon-wrap">
+              <img src="../images/treasure.jpg" alt="">
+            </div>
+            <div>
+              <div class="feature-text-title">Original Puzzle Mechanics</div>
+              <div class="feature-text-desc">
+                Proprietary challenges designed in-house for unique gameplay every visit.
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon-wrap">
+              <img src="../images/zombie.jpg" alt="">
+            </div>
+            <div>
+              <div class="feature-text-title">Live Game Mastering</div>
+              <div class="feature-text-desc">
+                Dedicated hosts monitor your session and deliver immersive assistance when needed.
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon-wrap">
+              <img src="../images/secertlab.avif" alt="">
+            </div>
+            <div>
+              <div class="feature-text-title">Victory Photography</div>
+              <div class="feature-text-desc">
+                Celebrate your triumph with complimentary team photos and hall-of-fame moments.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="#booking" class="btn-primary">Book an Adventure</a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+const revealEls = document.querySelectorAll(".reveal");
+
+const revealObsrver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+},{threshold:0.15});
+
+revealEls.forEach(el=>revealObsrver.observe(el));
+</script>
+<section class="section testimonials-section" id="testimonials">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="section-tag">Testimonials</div>
+      <h2 class="section-title">Voices of the Escaped</h2>
+      <p class="section-subtitle">
+        Real stories from brave teams who survived the challenge.
+      </p>
+    </div>
+
+    <div class="testimonials-marquee">
+      <div class="testimonials-track" id="testimonialsTrack">
+
+        
+        <article class="testimonial-item">
+          <div class="testimonial-top">
+            <img src="https://i.pravatar.cc/100?img=11" alt="Rahul">
+            <div>
+              <h4>Rahul Krishnamurthy</h4>
+              <span>The Alchemist's Tomb</span>
+            </div>
+          </div>
+
+          <div class="testimonial-stars">★★★★★</div>
+
+          <p>
+            The Alchemist's Tomb destroyed us in the best possible way.
+            We scrambled for 58 minutes and barely made it out.
+            Absolutely phenomenal experience.
+          </p>
+        </article>
+
+        
+        <article class="testimonial-item">
+          <div class="testimonial-top">
+            <img src="https://i.pravatar.cc/100?img=32" alt="Priya">
+            <div>
+              <h4>Priya Sundaram</h4>
+              <span>Corporate Team Package</span>
+            </div>
+          </div>
+
+          <div class="testimonial-stars">★★★★★</div>
+
+          <p>
+            Did the team-building package for our office and everyone
+            was completely hooked. We're already planning our next visit.
+          </p>
+        </article>
+
+        
+        <article class="testimonial-item">
+          <div class="testimonial-top">
+            <img src="https://i.pravatar.cc/100?img=23" alt="Meera">
+            <div>
+              <h4>Meera Venkatesh</h4>
+              <span>Deep Space</span>
+            </div>
+          </div>
+
+          <div class="testimonial-stars">★★★★★</div>
+
+          <p>
+            Deep Space is unlike anything I've ever done.
+            They actually made us feel like we were aboard a damaged spacecraft.
+          </p>
+        </article>
+
+        
+        <article class="testimonial-item">
+          <div class="testimonial-top">
+            <img src="https://i.pravatar.cc/100?img=18" alt="Arjun">
+            <div>
+              <h4>Arjun Joshi</h4>
+              <span>Crimson Manor</span>
+            </div>
+          </div>
+
+          <div class="testimonial-stars">★★★★★</div>
+
+          <p>
+            Booking was seamless and staff was incredibly welcoming.
+            Our birthday surprise became unforgettable.
+          </p>
+        </article>
+
+        
+        <article class="testimonial-item">
+          <div class="testimonial-top">
+            <img src="https://i.pravatar.cc/100?img=44" alt="Siddharth">
+            <div>
+              <h4>Siddharth Nair</h4>
+              <span>The Vault</span>
+            </div>
+          </div>
+
+          <div class="testimonial-stars">★★★★★</div>
+
+          <p>
+            The puzzles are clever, the story is compelling,
+            and the set is jaw-droppingly detailed.
+          </p>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<script>
+    const testimonialsTrack = document.getElementById("testimonialsTrack");
+
+if (testimonialsTrack) {
+    testimonialsTrack.innerHTML += testimonialsTrack.innerHTML;
+}
+</script>
+<section class="section pricing-section" id="pricing">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="section-tag">Pricing</div>
+      <h2 class="section-title">Choose Your Mission</h2>
+      <p class="section-subtitle">
+        Flexible packages for every kind of team — from first-timers to seasoned escapers.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+
+      
+      <article class="pricing-card reveal">
+        <div class="pricing-tier">Explorer</div>
+
+        <div class="pricing-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount">799</span>
+        </div>
+
+        <div class="price-period">per person · single room</div>
+
+        <h3 class="pricing-name">The First Escape</h3>
+
+        <ul class="pricing-features">
+          <li><span>✓</span> Access to 1 Room</li>
+          <li><span>✓</span> 60-Minute Session</li>
+          <li><span>✓</span> Game Master Briefing</li>
+          <li><span>✓</span> 3 Hint Tokens</li>
+          <li class="disabled"><span>✗</span> Victory Photo</li>
+          <li class="disabled"><span>✗</span> Priority Booking</li>
+        </ul>
+
+        <a href="#booking" class="btn-primary pricing-btn">Get Started</a>
+      </article>
+
+      
+      <article class="pricing-card featured reveal reveal-delay-1">
+        <div class="pricing-badge">Most Popular</div>
+
+        <div class="pricing-tier">Adventurer</div>
+
+        <div class="pricing-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount">1299</span>
+        </div>
+
+        <div class="price-period">per person · two rooms</div>
+
+        <h3 class="pricing-name">Double the Thrill</h3>
+
+        <ul class="pricing-features">
+          <li><span>✓</span> Access to 2 Rooms</li>
+          <li><span>✓</span> 60-Minute Each</li>
+          <li><span>✓</span> Dedicated Game Master</li>
+          <li><span>✓</span> Unlimited Hints</li>
+          <li><span>✓</span> Victory Photo Pack</li>
+          <li><span>✓</span> Priority Booking</li>
+        </ul>
+
+        <a href="#booking" class="btn-primary pricing-btn">Book Now</a>
+      </article>
+
+      
+      <article class="pricing-card reveal reveal-delay-2">
+        <div class="pricing-tier">Elite</div>
+
+        <div class="pricing-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount">2499</span>
+        </div>
+
+        <div class="price-period">per group · private event</div>
+
+        <h3 class="pricing-name">The Full Conquest</h3>
+
+        <ul class="pricing-features">
+          <li><span>✓</span> All 6 Rooms Access</li>
+          <li><span>✓</span> Private Booking</li>
+          <li><span>✓</span> Personal Game Master</li>
+          <li><span>✓</span> Unlimited Hints</li>
+          <li><span>✓</span> Full Photo & Video</li>
+          <li><span>✓</span> Catered Experience</li>
+        </ul>
+
+        <a href="#booking" class="btn-primary pricing-btn">Contact Us</a>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+<script>
+    document.querySelectorAll('.pricing-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        if (!card.classList.contains('featured')) {
+            card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.35)';
+        }
+    });
+
+    card.addEventListener('mouseleave', () => {
+        if (!card.classList.contains('featured')) {
+            card.style.boxShadow = '';
+        }
+    });
+});
+</script>
+<section class="section booking-section" id="booking">
+  <div class="booking-bg-text">BOOK NOW</div>
+
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="section-tag">Reserve Your Spot</div>
+      <h2 class="section-title">Start Your Adventure</h2>
+      <p class="section-subtitle">
+        Rooms fill fast — especially on weekends. Reserve your mission before time runs out.
+      </p>
+    </div>
+
+    <div class="booking-layout">
+
+      
+      <div class="booking-info reveal">
+        <div class="booking-info-item">
+          <div class="booking-icon">📞</div>
+          <div>
+            <span>Call Us</span>
+            <p>+91 98765 43210</p>
+          </div>
+        </div>
+
+        <div class="booking-info-item">
+          <div class="booking-icon">📍</div>
+          <div>
+            <span>Location</span>
+            <p>MG Road, Nellore, AP</p>
+          </div>
+        </div>
+
+        <div class="booking-info-item">
+          <div class="booking-icon">🕐</div>
+          <div>
+            <span>Working Hours</span>
+            <p>10 AM – 10 PM Daily</p>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <form class="booking-form reveal reveal-delay-2" id="bookingForm">
+
+        <div class="form-row">
+          <input type="text" id="name" placeholder="Full Name" required>
+          <input type="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="form-row">
+          <input type="tel" placeholder="Phone Number" required>
+
+          <select required>
+            <option value="">Choose Room</option>
+            <option>The Alchemist's Tomb</option>
+            <option>Crimson Manor</option>
+            <option>Lost Laboratory</option>
+            <option>The Vault</option>
+            <option>Deep Space</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <input type="date" required>
+
+          <select required>
+            <option>Players</option>
+            <option>2 Players</option>
+            <option>3 Players</option>
+            <option>4 Players</option>
+            <option>5 Players</option>
+            <option>6 Players</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary booking-btn">
+          Reserve My Session
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+<script>
+    
+
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+
+    if(!name){
+        alert("Please enter your name.");
+        return;
+    }
+
+    alert(`Thanks ${name}! Your booking request has been received.`);
+    this.reset();
+});
+
+
+
+
+const reveaEls = document.querySelectorAll(".reveal");
+
+const reveaObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+        }
+    });
+},{
+    threshold:0.2
+});
+
+reveaEls.forEach(el=>reveaObserver.observe(el));
+</script>
+    <footer id="footer" class="footer"></footer>
+    <script src="js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact HQ | ESCAPEQUEST</title>
+    <meta name="description" content="Initiate contact with ESCAPEQUEST Global HQ for mission inquiries and support.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/contactus.css">
+</head>
+<body>
+   
+    <nav id="navbar" class="navbar"></nav>
+
+    <main class="contact-page">
+        <!-- Hero Section -->
+        <section class="contact-hero reveal">
+            <div class="hero-bg-overlay"></div>
+            <div class="container hero-content">
+                <span class="hero-tag">Direct Line</span>
+                <h1 class="hero-title">Get in <span class="accent-title">Touch</span></h1>
+                <p class="hero-subtitle">Our agents are standing by to assist with your next deployment.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Transmission Form -->
+                    <div class="transmission-box glass reveal">
+                        <div class="box-header">
+                            <h2>Outgoing </h2>
+                            <p>Send a secure message </p>
+                        </div>
+                        <form id="contact-form" class="transmission-form">
+                            <div class="input-row">
+                                <div class="form-group">
+                                    <label>Your Full Name</label>
+                                    <input type="text" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Return Channel</label>
+                                    <input type="email" placeholder="agent@escapequest.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Mission Node</label>
+                                <select>
+                                    <option>General Inquiry</option>
+                                    <option>Mission Support</option>
+                                    <option>Corporate Deployment</option>
+                                    <option>Feedback Archive</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Intelligence Data</label>
+                                <textarea rows="5" placeholder="Enter your transmission data here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary-minimal">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- HQ Coordinates -->
+                    <div class="coordinates-box reveal">
+                        <div class="coord-item glass">
+                            <div class="coord-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="coord-info">
+                                <h3>Global </h3>
+                                <p>123 Elite Plaza, 5th Floor<br>Koramangala, Bangalore</p>
+                            </div>
+                        </div>
+                        <div class="coord-item glass">
+                            <div class="coord-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="coord-info">
+                                <h3>Secure Line</h3>
+                                <p>+91 (800) 123-4567<br>+91 (800) 987-6543</p>
+                            </div>
+                        </div>
+                        <div class="coord-item glass">
+                            <div class="coord-icon"><i class="fas fa-satellite"></i></div>
+                            <div class="coord-info">
+                                <h3>Encrypted Channels</h3>
+                                <div class="social-links-minimal">
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Showcase -->
+        <section class="location-showcase reveal">
+            <div class="container">
+                <div class="map-wrapper glass">
+                    <iframe 
+                        id="google-map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.751351145107!2d77.62002347514332!3d12.923674687387438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1460d3c00001%3A0x7d00f68d9e68e4c!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1714986543210!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/contactus.js"></script>
+</body>
+</html>

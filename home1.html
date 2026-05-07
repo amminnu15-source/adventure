@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCAPEQUEST | Unlock the Mystery. Conquer the Challenge.</title>
+    <meta name="description" content="India's #1 premium immersive escape room experience. Book rooms, track stats, compete on leaderboards, and relive your victories.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">
+    <!-- <link rel="stylesheet" href="css/premium.css"> -->
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar"></nav>
+
+    <main>
+
+        <!-- ═══════════════════════════════════════════
+             HERO — Full-screen cinematic opener
+        ═══════════════════════════════════════════ -->
+        <section class="hero" id="hero">
+            <div class="hero__bg">
+                <img src="images/bg.avif" alt="Stars and mystery">
+            </div>
+            <div class="hero__overlay"></div>
+            <div class="hero__particles" id="particles"></div>
+
+            <div class="container hero__inner">
+                <span class="hero__badge reveal">
+                    <i class="fas fa-shield-alt"></i> India's #1 Immersive Experience
+                </span>
+                <h1 class="hero__title reveal">
+                    Unlock the Mystery.<br>
+                    <span class="hero__title--accent">Conquer the Challenge.</span>
+                </h1>
+                <p class="hero__subtitle reveal">
+                    Step through the threshold into hyper-realistic worlds where every shadow holds a clue,
+                    every tick of the clock raises the stakes, and only the sharpest minds survive.
+                </p>
+                <div class="hero__actions reveal">
+                    <a href="#rooms" class="btn btn--primary">
+                        <i class="fas fa-door-open"></i> Book a Room
+                    </a>
+                    <a href="dashboard.html" class="btn btn--outline">
+                        <i class="fas fa-trophy"></i> Leaderboards
+                    </a>
+                </div>
+                <div class="hero__scroll-indicator">
+                    <span>Scroll to explore</span>
+                    <div class="hero__scroll-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             STATS — Animated counter strip
+        ═══════════════════════════════════════════ -->
+        <section class="stats" id="stats">
+            <div class="container">
+                <div class="stats__grid reveal">
+                    <div class="stats__item">
+                        <div class="stats__number" data-target="150">0</div>
+                        <div class="stats__label">Mysteries Solved Daily</div>
+                    </div>
+                    <div class="stats__item">
+                        <div class="stats__number" data-target="50000">0</div>
+                        <div class="stats__label">Agents Worldwide</div>
+                    </div>
+                    <div class="stats__item">
+                        <div class="stats__number" data-target="12">0</div>
+                        <div class="stats__label">Elite Locations</div>
+                    </div>
+                    <div class="stats__item">
+                        <div class="stats__number" data-target="99">0</div>
+                        <div class="stats__label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             FEATURES — Why choose ESCAPEQUEST
+        ═══════════════════════════════════════════ -->
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Why Choose Us</span>
+                    <h2 class="section-title">The Agent Experience</h2>
+                    <p class="section-subtitle">Every tool an elite agent needs — from mission planning to victory celebration.</p>
+                </div>
+
+                <div class="features__grid">
+                    <div class="feature-card reveal">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="feature-card__title">Easy Room Booking</h3>
+                        <p class="feature-card__text">Select your mission, pick your slot, and deploy — all through our encrypted portal in under 60 seconds.</p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="feature-card__title">Post-Game Hints</h3>
+                        <p class="feature-card__text">Didn't crack that final puzzle? Unlock the full debrief and hidden lore after every mission.</p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-card__title">Progress Tracking</h3>
+                        <p class="feature-card__text">Monitor your escape times, hint usage, and agent rank across every mission node in real time.</p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="feature-card__title">Team Leaderboards</h3>
+                        <p class="feature-card__text">Compete against top squads nationally. Climb the ranks and claim your spot in the Hall of Legends.</p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-camera-retro"></i>
+                        </div>
+                        <h3 class="feature-card__title">Victory Gallery</h3>
+                        <p class="feature-card__text">Download cinematic photos of your team's triumph, share them instantly, and relive the moment.</p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3 class="feature-card__title">Elite Community</h3>
+                        <p class="feature-card__text">Join a network of master puzzle-solvers, exchange strategies, and build your reputation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             ROOMS — Escape room showcase
+        ═══════════════════════════════════════════ -->
+        <section class="rooms" id="rooms">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Current Operations</span>
+                    <h2 class="section-title">Choose Your Mission</h2>
+                    <p class="section-subtitle">Each room is a cinematic masterpiece of storytelling, engineering, and adrenaline.</p>
+                </div>
+
+                <div class="rooms__grid">
+                    <div class="room-card reveal">
+                        <div class="room-card__image">
+                            <img src="images/hauntedmansion.jpg" alt="Cyber Heist">
+                            <div class="room-card__badge">Hard</div>
+                        </div>
+                        <div class="room-card__body">
+                            <h3 class="room-card__title">Haunted Mansion</h3>
+                            <p class="room-card__desc">Whispers echo through the halls as you explore a cursed mansion. Solve chilling puzzles, face unexpected twists, and escape before the darkness takes over.</p>
+                            <div class="room-card__meta">
+                                <span><i class="fas fa-clock"></i> 60 min</span>
+                                <span><i class="fas fa-users"></i> 2–6 players</span>
+                                <span class="room-card__stars">★★★★☆</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--sm">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="room-card reveal">
+                        <div class="room-card__image">
+                            <img src="images/boomb.jpg" alt="Silent Asylum">
+                            <div class="room-card__badge room-card__badge--extreme">Extreme</div>
+                        </div>
+                        <div class="room-card__body">
+                            <h3 class="room-card__title">Bomb Defusal</h3>
+                            <p class="room-card__desc">A ticking clock. A hidden device. Work fast to decode signals, cut the right wires, and stop the countdown before disaster strikesWork fast to decode signals, cut the right wires .</p>
+                            <div class="room-card__meta">
+                                <span><i class="fas fa-clock"></i> 75 min</span>
+                                <span><i class="fas fa-users"></i> 4–8 players</span>
+                                <span class="room-card__stars">★★★★★</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--sm">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="room-card reveal">
+                        <div class="room-card__image">
+                            <img src="images/laboratory.webp" alt="The Vault">
+                            <div class="room-card__badge room-card__badge--medium">Medium</div>
+                        </div>
+                        <div class="room-card__body">
+                            <h3 class="room-card__title">Secret Laboratory</h3>
+                            <p class="room-card__desc">A hidden lab filled with strange experiments and locked secrets. Decode clues, activate systems, and uncover what went wrong before time runs out.</p>
+                            <div class="room-card__meta">
+                                <span><i class="fas fa-clock"></i> 60 min</span>
+                                <span><i class="fas fa-users"></i> 2–5 players</span>
+                                <span class="room-card__stars">★★★☆☆</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             HOW IT WORKS — Step-by-step protocol
+        ═══════════════════════════════════════════ -->
+        <section class="protocol" id="protocol">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">How It Works</span>
+                    <h2 class="section-title">The Mission Protocol</h2>
+                    <p class="section-subtitle">From civilian to secret agent in four simple steps.</p>
+                </div>
+
+                <div class="protocol__timeline reveal">
+                    <div class="protocol__step">
+                        <div class="protocol__number">01</div>
+                        <div class="protocol__content">
+                            <h4>Choose Your Mission</h4>
+                            <p>Browse our catalogue of operations, select your difficulty, and lock in your time slot.</p>
+                        </div>
+                    </div>
+                    <div class="protocol__step">
+                        <div class="protocol__number">02</div>
+                        <div class="protocol__content">
+                            <h4>Assemble Your Squad</h4>
+                            <p>Gather 2–8 agents. Arrive 15 minutes early for your classified briefing and gear check.</p>
+                        </div>
+                    </div>
+                    <div class="protocol__step">
+                        <div class="protocol__number">03</div>
+                        <div class="protocol__content">
+                            <h4>Enter the Room</h4>
+                            <p>60 minutes. Your team vs. the room. Use logic, grit, and teamwork to crack every code.</p>
+                        </div>
+                    </div>
+                    <div class="protocol__step">
+                        <div class="protocol__number">04</div>
+                        <div class="protocol__content">
+                            <h4>Claim Your Victory</h4>
+                            <p>Escape, celebrate, capture your victory photo, and see your name on the global leaderboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             GALLERY — Victory Photos
+        ═══════════════════════════════════════════ -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Evidence Locker</span>
+                    <h2 class="section-title">Victory Moments</h2>
+                    <p class="section-subtitle">Real teams. Real escapes. Real glory.</p>
+                </div>
+
+                <div class="gallery__grid reveal">
+                    <div class="gallery__item gallery__item--wide">
+                        <img src="images/Featuredimage.jpeg" alt="Team celebrating">
+                        <div class="gallery__overlay">
+                            <span>haunted mansion — 34:12</span>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="images/beat the bomb.avif" alt="Team strategizing">
+                        <div class="gallery__overlay">
+                            <span>bomb defusal — 42:08</span>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="images/laboratory.webp" alt="Team victory">
+                        <div class="gallery__overlay">
+                            <span>The Secert Laboratory — 55:30</span>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <img src="images/haunted.webp" alt="Friends laughing">
+                        <div class="gallery__overlay">
+                            <span>haunted — 48:55</span>
+                        </div>
+                    </div>
+                    <div class="gallery__item gallery__item--wide">
+                        <img src="images/haunted.jfif" alt="Agent portrait">
+                        <div class="gallery__overlay">
+                            <span>Top Agent — Alpha-07</span>
+                        </div>
+                   
+                    </div>
+                     <div class="gallery__item">
+                        <img src="images/Featuredimage.jpeg" alt="Team victory">
+                        <div class="gallery__overlay">
+                            <span>The Secert Laboratory — 55:30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             CTA — Final push
+        ═══════════════════════════════════════════ -->
+        <section class="cta" id="cta">
+            <div class="cta__bg">
+                <img src="images/adventure.jpg" alt="CTA Background">
+            </div>
+            <div class="cta__overlay"></div>
+            <div class="container cta__inner reveal">
+                <h2 class="cta__title">The Clock Is Already Ticking.</h2>
+                <p class="cta__text">Every second wasted is a clue missed. Your team is waiting. The room is ready. Are you?</p>
+                <a href="#rooms" class="btn btn--primary btn--lg">
+                    <i class="fas fa-key"></i> Start Your Adventure
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+    <!-- Scripts -->
+    <script src="js/components.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

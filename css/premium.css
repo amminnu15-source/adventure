@@ -1,0 +1,41 @@
+/* Premium styling utilities */
+
+/* Glassmorphism utility */
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+}
+
+/* Elevated CTA button */
+.cta-btn {
+    box-shadow: 0 4px 12px rgba(255, 180, 0, 0.3);
+    transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.cta-btn:hover {
+    box-shadow: 0 6px 20px rgba(255, 180, 0, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Subtle card hover elevation */
+.card {
+    transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+/* Gradient overlay for hero */
+.hero-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,180,0,0.15), rgba(0,0,0,0.6));
+    pointer-events: none;
+}

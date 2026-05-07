@@ -1,0 +1,398 @@
+/* 
+    ESCAPEQUEST Authentication Styles
+    Premium, Immersive, Responsive
+*/
+
+.auth-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-primary);
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 180, 0, 0.05) 0%, transparent 70%);
+    padding: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+#particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind the card but visible on body */
+    pointer-events: none;
+}
+
+.auth-card {
+    z-index: 10; /* Ensure card is above particles */
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px; /* Reduced from 420px */
+    padding: 1.5rem; /* Further reduced from 2rem */
+    position: relative;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-height: 98vh;
+    overflow: hidden; /* ABSOLUTELY NO SCROLLING as requested */
+    animation: authFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-card::-webkit-scrollbar {
+    width: 4px;
+}
+
+.auth-card::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+@keyframes authFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Toggles in top-right of card */
+.auth-controls {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+[dir="rtl"] .auth-controls {
+    right: auto;
+    left: 1.25rem;
+}
+
+.auth-toggle-btn {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    background: var(--surface);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: var(--transition-fast);
+    border: 1px solid var(--border);
+    min-width: 40px;
+}
+
+.auth-toggle-btn:hover {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+}
+
+/* Logo Section */
+.auth-logo {
+    text-align: center;
+    margin-bottom: 0.75rem;
+    padding-top: 1.5rem; /* Reduced to save space while avoiding overlap */
+}
+
+.auth-logo a {
+    display: flex;
+    flex-direction: row; /* Icon on the left */
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.auth-logo h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem; /* Reduced from 1.75rem */
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 1rem; /* Reduced from 1.5rem */
+}
+
+.auth-header h1 {
+    font-size: 1.25rem; /* Reduced from 1.5rem */
+    margin-bottom: 0.15rem;
+    color: var(--text-primary);
+}
+
+.auth-header p {
+    color: var(--text-secondary);
+    font-size: 0.8rem; /* Reduced from 0.9rem */
+}
+
+/* Form Styles */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Reduced from 1rem */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.input-group label {
+    font-size: 0.75rem; /* Reduced from 0.85rem */
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper i.field-icon {
+    position: absolute;
+    left: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.auth-input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.75rem 1rem 0.75rem 2.75rem; /* Reduced from 0.85rem */
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+}
+
+[dir="rtl"] .auth-input {
+    padding: 0.85rem 2.75rem 0.85rem 1rem;
+}
+
+[dir="rtl"] .input-wrapper i.field-icon {
+    left: auto;
+    right: 1rem;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(255, 180, 0, 0.1);
+}
+
+/* Password Visibility Toggle */
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    padding: 0.25rem;
+}
+
+[dir="rtl"] .password-toggle {
+    right: auto;
+    left: 1rem;
+}
+
+.password-toggle:hover {
+    color: var(--accent);
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-top: -0.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.remember-me input {
+    accent-color: var(--accent);
+}
+
+.forgot-password {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* CTA Button */
+.auth-btn {
+    width: 100%; /* Matches input fields width */
+    background: var(--accent);
+    color: #000;
+    padding: 0.85rem; /* Reduced from 1rem */
+    border-radius: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem; /* Reduced from 1rem */
+    transition: var(--transition-fast);
+}
+
+.auth-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 180, 0, 0.3);
+}
+
+/* Social Logins */
+.social-separator {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.5rem 0; /* Further reduced margin */
+    color: var(--text-secondary);
+    font-size: 0.7rem; /* Reduced from 0.8rem */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-separator::before,
+.social-separator::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem; /* Reduced from 1rem */
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition-fast);
+}
+
+.social-btn:hover {
+    background: var(--border);
+    border-color: var(--accent);
+}
+
+.social-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Footer Link */
+.auth-footer {
+    text-align: center;
+    margin-top: 1rem; /* Reduced from 1.25rem */
+    font-size: 0.85rem; /* Reduced from 0.9rem */
+    color: var(--text-secondary);
+}
+
+.auth-footer a {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Responsiveness based on requested breakpoints */
+
+/* Large: > 1280px - Default already handles max-width */
+
+/* Desktop: 1024px - 1280px */
+@media (max-width: 1280px) {
+    .auth-card {
+        max-width: 440px;
+    }
+}
+
+/* Tablet: 640px - 1024px */
+@media (max-width: 1024px) {
+    .auth-card {
+        max-width: 400px;
+        padding: 2.5rem;
+    }
+}
+
+/* Mobile: < 640px */
+@media (max-width: 640px) {
+    .auth-page {
+        padding: 0;
+        align-items: stretch;
+    }
+    
+    .auth-card {
+        max-width: none;
+        border-radius: 0;
+        border: none;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .auth-controls {
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    .social-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark/Light refinements */
+[data-theme="light"] .auth-card {
+    background: #ffffff;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+}
+
+[data-theme="light"] .auth-input {
+    background: #f8f8f8;
+}
+
+[data-theme="light"] .social-btn {
+    background: #f8f8f8;
+}

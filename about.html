@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCAPEQUEST | Unlock the Mystery. Conquer the Challenge.</title>
+    <meta name="description" content="India's #1 premium immersive escape room experience. Book rooms, track stats, compete on leaderboards, and relive your victories.">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar"></nav>
+<section class="about-hero">
+
+  
+  <div class="hero-bg">
+    <canvas id="heroBg"></canvas>
+
+    <div class="hero-grid"></div>
+    <div class="hero-vignette"></div>
+  </div>
+
+  <div class="container">
+
+    
+    <div class="hero-top reveal">
+      <div class="hero-eyebrow">
+        Our Story · Breakout Adventure Center
+      </div>
+
+      <div class="hero-badge">
+        Founded 2018 · Nellore
+      </div>
+    </div>
+
+    
+    <h1 class="about-hero-title reveal reveal-delay-1">
+      The People <br>
+      <span class="accent-word">Behind The Locks</span>
+    </h1>
+
+    
+    <div class="hero-bottom reveal reveal-delay-2">
+
+      <p class="hero-desc">
+        We are puzzle architects, set designers, storytellers, and adrenaline dealers.
+        Since 2018, we've been crafting immersive worlds — one locked door at a time.
+      </p>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">6</div>
+          <div class="hero-stat-label">Rooms</div>
+        </div>
+
+        <div class="hero-stat">
+          <div class="hero-stat-num">12K+</div>
+          <div class="hero-stat-label">Players</div>
+        </div>
+
+        <div class="hero-stat">
+          <div class="hero-stat-num">7</div>
+          <div class="hero-stat-label">Years</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<script>
+    
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+        }
+    });
+},{
+    threshold:0.2
+});
+
+reveals.forEach(el=>observer.observe(el));
+
+
+
+
+const canvas = document.getElementById("heroBg");
+const ctx = canvas.getContext("2d");
+
+function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+let particles = Array.from({length:40}, () => ({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    r: Math.random()*2,
+    d: Math.random()*0.5
+}));
+
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle = "rgba(255,180,0,0.4)";
+    particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+
+        p.y += p.d;
+        if(p.y > canvas.height){
+            p.y = 0;
+            p.x = Math.random()*canvas.width;
+        }
+    });
+
+    requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+<section class="section origin-section">
+
+  <div class="container">
+
+    
+    <div class="section-header reveal">
+      <div class="section-tag">Our Origin</div>
+
+      <h2 class="section-title">
+        Born From a Shared Obsession
+      </h2>
+
+      <p class="section-subtitle">
+        The story behind how Breakout came to life — from idea to reality.
+      </p>
+    </div>
+
+    <div class="origin-grid">
+
+      
+      <div class="origin-visual reveal-left">
+
+        <div class="origin-float-accent">🔑</div>
+
+        <div class="origin-frame">
+          <div class="origin-frame-border"></div>
+
+          
+          <img src="../images/prisonbreak.jpg" 
+               alt="Escape Room Origin"
+               class="origin-image">
+        </div>
+
+        <div class="origin-float-tag">
+          <div class="origin-float-tag-year">2018</div>
+          <div class="origin-float-tag-lbl">Year Founded</div>
+        </div>
+
+      </div>
+
+      
+      <div class="origin-text reveal-right">
+
+        <p class="origin-body">
+          It started in a cramped apartment in 2017. Three friends — an architect, a game designer, and a theatre director — believed escape rooms could be more immersive.
+        </p>
+
+        <div class="origin-pull-quote">
+          <p>
+            "We didn't want to build puzzles. We wanted to build worlds you could walk into and lose yourself inside."
+          </p>
+        </div>
+
+        <p class="origin-body">
+          After months of prototyping and testing, Breakout opened its first room in Nellore in 2018 with one mission — create unforgettable experiences.
+        </p>
+
+        <p class="origin-body">
+          Today, we continue crafting original puzzles, real environments, and stories that challenge and excite every player.
+        </p>
+
+        <a href="#booking" class="btn-primary">
+          Experience It →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<script>
+const elements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+
+const obsever = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.2 });
+
+elements.forEach(el => obsever.observe(el));
+</script>
+<section class="section values-section">
+  <div class="values-bg-word" aria-hidden="true">VALUES</div>
+
+  <div class="container">
+
+    
+    <div class="section-header reveal">
+      <div class="section-tag">What Drives Us</div>
+      <h2 class="section-title">
+        The Six Principles
+      </h2>
+    </div>
+
+    
+    <div class="values-grid">
+
+      <div class="value-card reveal d1">
+        <div class="value-num">01 / 06</div>
+        <span class="value-icon">🎭</span>
+        <h3 class="value-title">Storytelling First</h3>
+        <p class="value-desc">
+          Every puzzle exists to serve the narrative. You can't solve it without understanding it.
+        </p>
+      </div>
+
+      <div class="value-card reveal d2">
+        <div class="value-num">02 / 06</div>
+        <span class="value-icon">🔩</span>
+        <h3 class="value-title">Uncompromising Craft</h3>
+        <p class="value-desc">
+          No shortcuts. Every prop is real, detailed, and intentionally crafted.
+        </p>
+      </div>
+
+      <div class="value-card reveal d3">
+        <div class="value-num">03 / 06</div>
+        <span class="value-icon">🧩</span>
+        <h3 class="value-title">Original Mechanics</h3>
+        <p class="value-desc">
+          No reused puzzles. Every experience is uniquely designed and tested.
+        </p>
+      </div>
+
+      <div class="value-card reveal d1">
+        <div class="value-num">04 / 06</div>
+        <span class="value-icon">👥</span>
+        <h3 class="value-title">Team Above All</h3>
+        <p class="value-desc">
+          Built for collaboration. Every win is a shared victory.
+        </p>
+      </div>
+
+      <div class="value-card reveal d2">
+        <div class="value-num">05 / 06</div>
+        <span class="value-icon">♿</span>
+        <h3 class="value-title">Radical Inclusivity</h3>
+        <p class="value-desc">
+          Experiences designed for everyone — challenging but welcoming.
+        </p>
+      </div>
+
+      <div class="value-card reveal d3">
+        <div class="value-num">06 / 06</div>
+        <span class="value-icon">🌱</span>
+        <h3 class="value-title">Local Roots</h3>
+        <p class="value-desc">
+          Built in Nellore. Built for the community for the fun and enjoyment.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<script>
+    const reeals = document.querySelectorAll(".reveal");
+
+const obserer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.15 });
+
+reeals.forEach(el => obserer.observe(el));
+</script>
+
+<section class="section team-section">
+  <div class="container">
+
+    
+
+      <div class="section-header reveal">
+      <div class="section-tag">The Crew</div>
+      <h2 class="section-title">
+         Meet the Architects of Chaos
+      </h2>
+    </div>
+
+
+    
+    <div class="team-grid">
+
+      
+      <div class="team-card reveal d1">
+        <div class="team-portrait">
+          <img src="../images/team3.jpg" alt="Arjun Krishnan">
+          <div class="team-portrait-overlay"></div>
+        </div>
+
+        <div class="team-info">
+          <div class="team-role">Co-Founder · Lead Designer</div>
+          <div class="team-name">Arjun Krishnan</div>
+          <div class="team-bio">
+            Architect turned puzzle designer crafting spatial logic and immersive layouts.
+          </div>
+          <div class="team-social">
+            <a href="#">ig</a>
+            <a href="#">in</a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="team-card reveal d2">
+        <div class="team-portrait">
+          <img src="../images/team4.jpg" alt="Priya Menon">
+          <div class="team-portrait-overlay"></div>
+        </div>
+
+        <div class="team-info">
+          <div class="team-role">Co-Founder · Narrative Director</div>
+          <div class="team-name">Priya Menon</div>
+          <div class="team-bio">
+            Theatre storyteller shaping every room’s narrative and emotional arc.
+          </div>
+          <div class="team-social">
+            <a href="#">ig</a>
+            <a href="#">in</a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="team-card reveal d3">
+        <div class="team-portrait">
+          <img src="../images/teams1.jpg" alt="Rohan Sharma">
+          <div class="team-portrait-overlay"></div>
+        </div>
+
+        <div class="team-info">
+          <div class="team-role">Co-Founder · Tech Wizard</div>
+          <div class="team-name">Rohan Sharma</div>
+          <div class="team-bio">
+            Builds hidden mechanisms, electronics, and interactive systems.
+          </div>
+          <div class="team-social">
+            <a href="#">gh</a>
+            <a href="#">in</a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="team-card reveal d4">
+        <div class="team-portrait">
+          <img src="../images/teams2.jpg" alt="Divya Venkat">
+          <div class="team-portrait-overlay"></div>
+        </div>
+
+        <div class="team-info">
+          <div class="team-role">Head Game Master</div>
+          <div class="team-name">Dinesh Venkat</div>
+          <div class="team-bio">
+            Leads gameplay experience, hint systems, and player journey.
+          </div>
+          <div class="team-social">
+            <a href="#">ig</a>
+            <a href="#">in</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+    const rveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+
+const observr = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.15 });
+
+rveals.forEach(el => observr.observe(el));
+</script>
+<section class="section timeline-section">
+  <div class="container">
+
+    
+    <div class="section-header reveal">
+      <div class="section-tag">Our Journey</div>
+      <h2 class="section-title">
+        Seven Years of Unlocking
+      </h2>
+    </div>
+
+    <div class="timeline-wrapper">
+
+      <div class="timeline-axis" id="timelineAxis">
+        <div class="timeline-axis-fill"></div>
+      </div>
+
+      
+      <div class="timeline-item reveal">
+        <div class="timeline-content-left">
+          <div class="timeline-year">2017</div>
+          <div class="timeline-title">The Spark</div>
+          <p class="timeline-desc">Three friends walked out of a mediocre escape room in Chennai and decided to build something unforgettable.</p>
+          <span class="timeline-milestone">The Idea Born</span>
+        </div>
+        <div class="timeline-node">17</div>
+        <div></div>
+      </div>
+
+      <div class="timeline-item reveal d1">
+        <div></div>
+        <div class="timeline-node">18</div>
+        <div class="timeline-content-right">
+          <div class="timeline-year">2018</div>
+          <div class="timeline-title">Breakout Opens</div>
+          <p class="timeline-desc">First room launched. Fully booked within a week.</p>
+          <span class="timeline-milestone">Grand Opening</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal d1">
+        <div class="timeline-content-left">
+          <div class="timeline-year">2019</div>
+          <div class="timeline-title">Expansion</div>
+          <p class="timeline-desc">Added new rooms and started in-house prop building.</p>
+          <span class="timeline-milestone">3 Rooms</span>
+        </div>
+        <div class="timeline-node">19</div>
+        <div></div>
+      </div>
+
+      <div class="timeline-item reveal d1">
+        <div></div>
+        <div class="timeline-node">20</div>
+        <div class="timeline-content-right">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-title">Digital Pivot</div>
+          <p class="timeline-desc">Created virtual escape rooms during lockdown.</p>
+          <span class="timeline-milestone">Went Digital</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal d1">
+        <div class="timeline-content-left">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-title">Major Comeback</div>
+          <p class="timeline-desc">Launched advanced puzzle rooms post-pandemic.</p>
+          <span class="timeline-milestone">10K Players</span>
+        </div>
+        <div class="timeline-node">22</div>
+        <div></div>
+      </div>
+
+      <div class="timeline-item reveal d1">
+        <div></div>
+        <div class="timeline-node">25</div>
+        <div class="timeline-content-right">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-title">Future Build</div>
+          <p class="timeline-desc">Working on the most ambitious room yet.</p>
+          <span class="timeline-milestone">Room 7 Coming</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+    
+
+const reveal = document.querySelectorAll(".reveal");
+const timelineItems = document.querySelectorAll(".timeline-item");
+const axis = document.getElementById("timelineAxis");
+
+function animateTimeline() {
+  const trigger = window.innerHeight * 0.85;
+
+  reveal.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < trigger) el.classList.add("active");
+  });
+
+  timelineItems.forEach(item => {
+    const top = item.getBoundingClientRect().top;
+    if (top < trigger) item.classList.add("active");
+  });
+
+  const axisTop = axis.getBoundingClientRect().top;
+  if (axisTop < trigger) axis.classList.add("active");
+}
+
+window.addEventListener("scroll", animateTimeline);
+window.addEventListener("load", animateTimeline);
+</script>
+<section class="section recognition-section">
+  <div class="container">
+
+    
+    <div class="section-header reveal">
+      <div class="section-tag">Recognition</div>
+      <h2 class="section-title">
+        Proof in the Praise
+      </h2>
+    </div>
+
+    <div class="recognition-split">
+
+      
+      <div class="awards-list reveal-left">
+
+        <div class="award-item">
+          <div class="award-icon">🏆</div>
+          <div>
+            <div class="award-year">2024</div>
+            <div class="award-title">Best Entertainment Venue — Nellore</div>
+            <div class="award-org">AP Tourism Excellence Awards</div>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-icon">⭐</div>
+          <div>
+            <div class="award-year">2023</div>
+            <div class="award-title">Top-Rated Escape Room — South India</div>
+            <div class="award-org">4.9/5 Rating</div>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-icon">🎖</div>
+          <div>
+            <div class="award-year">2022</div>
+            <div class="award-title">Best Team Experience</div>
+            <div class="award-org">AP Business Forum</div>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-icon">🌟</div>
+          <div>
+            <div class="award-year">2021</div>
+            <div class="award-title">Most Innovative Business</div>
+            <div class="award-org">Nellore Commerce Board</div>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="press-grid reveal-right">
+
+        <div class="press-card">
+          <div class="press-logo">The Hindu</div>
+          <p class="press-quote">
+            A genuinely disorienting and delightful immersive experience.
+          </p>
+        </div>
+
+        <div class="press-card">
+          <div class="press-logo">Deccan Chronicle</div>
+          <p class="press-quote">
+            The level of detail is obsessive — and that's what makes it unforgettable.
+          </p>
+        </div>
+
+        <div class="press-card">
+          <div class="press-logo">Times of India</div>
+          <p class="press-quote">
+            One of the finest escape room experiences in South India.
+          </p>
+        </div>
+
+        <div class="press-card">
+          <div class="press-logo">Escape Review India</div>
+          <p class="press-quote">
+            The Alchemist’s Tomb is a masterpiece of puzzle design.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    
+    <div class="recognition-cta reveal">
+      <a href="#booking" class="btn-primary">Book Your Experience →</a>
+    </div>
+
+  </div>
+</section>
+<script>
+    const revealer = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+
+function revealOnScroll() {
+  const trigger = window.innerHeight * 0.85;
+
+  revealer.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < trigger) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+</script>
+<section class="join-section">
+
+  
+  <svg class="join-bg" viewBox="0 0 1400 700">
+    <g stroke="rgba(255,180,0,0.05)" fill="none">
+      <circle cx="1200" cy="350" r="300"/>
+      <circle cx="200" cy="350" r="250"/>
+    </g>
+  </svg>
+
+  <div class="join-container">
+    <div class="join-content">
+
+      
+      <div class="join-reveal">
+        <h2 class="join-heading">
+          Build Worlds<br>with <em>Brilliant</em><br>People
+        </h2>
+
+        <p class="join-body">
+          We're looking for creative people who love puzzles and storytelling.
+        </p>
+
+        <a href="#" class="join-btn join-btn-primary">Send Message</a>
+        <a href="#" class="join-btn join-btn-ghost">View Roles</a>
+      </div>
+
+      
+      <div class="join-reveal">
+        <div class="join-grid">
+
+          <div class="role-card">Game Master</div>
+          <div class="role-card">Set Builder</div>
+          <div class="role-card">Puzzle Designer</div>
+          <div class="role-card">Content Creator</div>
+
+          <div class="join-news">
+            <input type="email" id="joinEmail" placeholder="your@email.com">
+            <button id="joinBtn">Subscribe</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<script>
+
+
+const onbserver = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("active");
+  });
+},{threshold:0.2});
+
+document.querySelectorAll(".join-reveal")
+.forEach(el=>onbserver.observe(el));
+
+
+document.getElementById("joinBtn").onclick=()=>{
+  const val=document.getElementById("joinEmail").value;
+  if(!val.includes("@")){
+    alert("Enter valid email");
+    return;
+  }
+  alert("Subscribed!");
+};
+
+
+document.body.ondblclick=()=>{
+  const html=document.documentElement;
+  html.setAttribute(
+    "data-theme",
+    html.getAttribute("data-theme")==="dark"?"light":"dark"
+  );
+};
+
+</script>
+
+     <footer id="footer" class="footer"></footer>
+    <script src="js/components.js"></script>
+    </body>
+    </html>
