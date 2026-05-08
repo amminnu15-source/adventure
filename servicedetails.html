@@ -50,20 +50,7 @@
   <div class="hero-content-wrap">
     <div class="container">
 
-      <div class="hero-top-bar">
-        <nav class="breadcrumb">
-          <a href="#">Home</a>
-          <span>✦</span>
-          <a href="#">Services</a>
-          <span>✦</span>
-          <span>The Crimson Manor</span>
-        </nav>
-
-        <div class="hero-difficulty-badge">
-          <span class="diff-dot"></span>
-          Expert Difficulty
-        </div>
-      </div>
+      
 
       <div class="hero-tag-row">
         <span class="tag">Horror</span>
@@ -876,10 +863,18 @@ reviewCards.forEach((card)=>{
   </div>
 
 </div>
+</div>
+</div>
+</div>
+
 <script>
-    /* =========================================
-   REVEAL ON SCROLL
-========================================= */
+window.addEventListener("mousemove",(e)=>{
+  cursor.style.left=e.clientX+"px";
+  cursor.style.top=e.clientY+"px";
+ 
+  ring.style.left=e.clientX+"px";
+  ring.style.top=e.client+"px";
+});
 
 const revealItems = document.querySelectorAll('.reveal');
 
@@ -900,9 +895,7 @@ revealItems.forEach((item)=>{
 });
 
 
-/* =========================================
-   OPTIONAL ROOM HOVER EFFECT
-========================================= */
+
 
 const similarRooms = document.querySelectorAll('.similar-room');
 
